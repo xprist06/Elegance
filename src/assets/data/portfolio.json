@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "prime locations",
+    "description": "Prime locations with scenic views, proximity to amenities, excellent infrastructure, and low crime rates are highly attractive to high-net-worth individuals. Investing in such properties will significantly boost their value over time. You can find Elegance properties in exclusive resort destinations in Spain, France, Italy, and Switzerland, as well as in major EU cities like Palma de Mallorca, Madrid, Paris, and Prague.",
+    "image": "portfolio-1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "spectacular design",
+    "description": "Our projects offer exceptional design and construction quality, using high-end materials and finishes. We hire renowned architects, interior designers, and construction companies to enhance the appeal and value of the property.",
+    "image": "portfolio-2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "eco-friendly innovations",
+    "description": "Incorporating sustainable design practices and eco-friendly features enhances the appeal of our properties, attracts environmentally conscious buyers, and contributes to long-term value creation. This includes energy-efficient appliances, green building materials, renewable energy sources, and water conservation measures.",
+    "image": "portfolio-3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "significant amenities",
+    "description": "Our properties offer a range of amenities and facilities designed to enhance the lifestyle of residents. These include spas, fitness centers, swimming pools, concierge services, private cinemas, landscaped gardens, and more.",
+    "image": "portfolio-4.jpg"
+  }
+]

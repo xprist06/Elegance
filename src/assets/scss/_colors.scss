@@ -1,0 +1,24 @@
+$colors: ( 
+    "dark": #13262B,
+    "brown": #A8865D,
+    "golden": #EBD1AB,
+    "linen": #F8EADC,
+    "light": #FFF8F1
+);
+
+// basic colors
+$color-dark:    color("dark");
+$color-brown:   color("brown");
+$color-golden:  color("golden");
+$color-linen:   color("linen");
+$color-light:   color("light");
+
+$text-color-dark:    color("dark");
+$text-color-brown:   color("brown");
+$text-color-golden:  color("golden");
+$text-color-linen:   color("linen");
+$text-color-light:   color("light");
+
+$header-bg:     color("light");
+
+$footer-bg:     color("dark");

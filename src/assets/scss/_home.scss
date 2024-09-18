@@ -1,0 +1,176 @@
+#home {
+  &.content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  figure {
+    width: 100%;
+    aspect-ratio: 1.5/1;
+    padding-top: 10rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  h2,
+  p {
+    text-align: center;
+  }
+
+  h2 {
+    width: 70%;
+
+    span {
+      color: $text-color-brown;
+    }
+  }
+
+  p {
+    &.intro-text {
+      color: $text-color-brown;
+      text-transform: uppercase;
+    }
+
+    &.info-text {
+      width: 60%;
+    }
+  }
+
+  #title {
+    position: relative;
+    width: 100%;
+
+    figure {
+      position: relative;
+      width: 100%;
+      padding: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .text-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      transform: translate(-50%, -50%);
+      width: 700px;
+
+      h1,
+      p {
+        color: $text-color-light;
+        text-align: center;
+      }
+
+      p {
+        font-size: $font-size-md;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  #for-clients,
+  #investment,
+  #projects {
+    .container {
+      padding: 270px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  #investment {
+    background-color: $color-dark;
+
+    h2,
+    h3,
+    p {
+      color: $text-color-golden;
+    }
+
+    p {
+      &.intro-text {
+        color: $text-color-light;
+      }
+    }
+
+    figure {
+      padding-bottom: 10rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding-top: 5rem;
+    }
+
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      p {
+        text-align: left;
+        width: 80%;
+      }
+    }
+  }
+
+  #projects {
+    .vertical-delimiter {
+      background-color: $color-dark;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 7rem;
+      width: 100%;
+      padding-top: 10rem;
+
+      figure,
+      .content {
+        display: flex;
+        width: 50%;
+      }
+
+      figure {
+        display: flex;
+        justify-content: center;
+        aspect-ratio: 1/1.65;
+        width: initial;
+        padding: 0;
+        max-height: 730px;
+      }
+
+      .content {
+        flex-direction: column;
+        justify-content: center;
+        max-width: 420px;
+        gap: 1rem;
+
+        p {
+          text-align: left;
+        }
+      }
+
+      &.row-reverse {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
