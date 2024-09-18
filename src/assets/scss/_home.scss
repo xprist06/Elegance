@@ -16,13 +16,12 @@
     }
   }
 
-  h2,
   p {
     text-align: center;
   }
 
   h2 {
-    width: 70%;
+    width: 90%;
 
     span {
       color: $text-color-brown;
@@ -43,17 +42,13 @@
   #title {
     position: relative;
     width: 100%;
+    height: 100vh;
 
     figure {
       position: relative;
       width: 100%;
+      height: 100%;
       padding: 0;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
 
     .text-content {
@@ -83,7 +78,7 @@
   #investment,
   #projects {
     .container {
-      padding: 270px 0;
+      padding: 10rem 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -112,9 +107,12 @@
     }
 
     .grid-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 4rem;
+      width: 90%;
       padding-top: 5rem;
     }
 
@@ -125,7 +123,6 @@
 
       p {
         text-align: left;
-        width: 80%;
       }
     }
   }
@@ -136,40 +133,174 @@
     }
 
     .row {
+      position: relative;
       display: flex;
       justify-content: center;
-      gap: 7rem;
+      gap: 2rem;
       width: 100%;
-      padding-top: 10rem;
+      padding: 10rem 1rem 0;
+      aspect-ratio: 1 / 1.65;
 
-      figure,
-      .content {
-        display: flex;
-        width: 50%;
+      &:hover {
+        img {
+          filter: grayscale(60%) blur(5px) brightness(0.75);
+        }
+
+        figure::after {
+          opacity: 1;
+          inset: 20px;
+        }
+
+        .content h3 {
+          scale: 1;
+          opacity: 1;
+        }
+        .content p {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       figure {
+        position: relative;
         display: flex;
         justify-content: center;
         aspect-ratio: 1/1.65;
-        width: initial;
+        width: 100%;
         padding: 0;
-        max-height: 730px;
+        max-height: 100vh;
+
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border: 2px solid $color-light;
+          border-radius: inherit;
+          opacity: 0;
+          transition: 0.4s ease-in-out;
+        }
+
+        img {
+          transition: 0.5s ease-in-out;
+        }
       }
 
       .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
-        max-width: 420px;
+        transform: translate(-50%, -25%);
+        text-align: center;
+        width: 70%;
         gap: 1rem;
+
+        h3,
+        p {
+          opacity: 0;
+          transition: 0.4s 0.2s ease;
+          color: $text-color-light;
+        }
+
+        h3 {
+          scale: 0.7;
+        }
 
         p {
           text-align: left;
+          transform: translateY(50%);
         }
       }
 
       &.row-reverse {
         flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #home {
+    #projects {
+      .row {
+        aspect-ratio: initial;
+
+        &:hover {
+          img {
+            filter: none;
+          }
+        }
+
+        figure,
+        .content {
+          width: 50%;
+        }
+
+        figure {
+          width: initial;
+          max-height: 730px;
+
+          &::after {
+            content: none;
+          }
+        }
+
+        .content {
+          position: relative;
+          top: initial;
+          left: initial;
+          transform: initial;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 420px;
+
+          h3,
+          p {
+            opacity: 1;
+            color: $text-color-dark;
+          }
+
+          p {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #home {
+    h2 {
+      width: 70%;
+    }
+
+    #for-clients,
+    #investment,
+    #projects {
+      .container {
+        padding: 270px 0;
+      }
+    }
+
+    #investment {
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .grid-item {
+          p {
+            width: 80%;
+          }
+        }
+      }
+    }
+
+    #projects {
+      .row {
+        gap: 7rem;
+        padding: 10rem 0 0;
       }
     }
   }

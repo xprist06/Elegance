@@ -1,9 +1,8 @@
 <template>
   <div id="home" class="content-wrapper">
     <section id="title">
-      <figure :style="{ height: computedImageHeight + 'px' }">
+      <figure>
         <img
-          :style="{ height: computedImageHeight + 'px' }"
           src="@/assets/images/homepage-title.jpg"
           alt="Homepage title image"
         />
@@ -108,12 +107,6 @@ export default {
   name: 'HomePage',
   components: {
     PortfolioItems,
-  },
-  computed: {
-    computedImageHeight() {
-      const headerHeight = document.querySelector('header')?.offsetHeight ?? 0;
-      return window.innerHeight - headerHeight;
-    },
   },
 };
 </script>
