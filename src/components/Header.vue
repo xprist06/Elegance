@@ -25,8 +25,7 @@
     </div>
     <transition name="slide-fade">
       <nav
-        class="mobile-navbar"
-        :class="{ 'nav-active': isMenuOpen }"
+        :class="{ 'mobile-navbar': true, 'nav-active': isMenuOpen }"
         v-if="isMobileView"
       >
         <ul>
