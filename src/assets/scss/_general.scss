@@ -31,20 +31,10 @@ footer {
   align-items: center;
   position: relative;
 
-  .logo {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -10%);
-  }
-
   .nav-left,
   .nav-right {
     display: flex;
     align-items: center;
-
-    ul {
-      gap: 27px;
-    }
   }
 
   a {
@@ -74,5 +64,11 @@ footer {
   display: flex;
   height: 73px;
   width: 5px;
-  background-color: $color-brown;
+  background-color: $color-dark;
+}
+
+@media screen and (min-width: 992px) {
+  .vertical-delimiter {
+    background-color: $color-brown;
+  }
 }

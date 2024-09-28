@@ -6,7 +6,7 @@
   color: $text-color-dark;
 }
 
-@each $header, $font-size in $font-size-headers {
+@each $header, $font-size in $font-size-headers-mobile {
   #{$header} {
     font-size: $font-size;
     font-family: $font-family-heading;
@@ -24,7 +24,7 @@
   }
 }
 
-@each $header, $line-height in $line-height-headers {
+@each $header, $line-height in $line-height-headers-mobile {
   #{$header} {
     line-height: $line-height;
   }
@@ -41,5 +41,23 @@ h2 {
 a {
   &:hover {
     text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  @each $header, $font-size in $font-size-headers {
+    #{$header} {
+      font-size: $font-size;
+
+      span {
+        font-size: $font-size;
+      }
+    }
+  }
+
+  @each $header, $line-height in $line-height-headers {
+    #{$header} {
+      line-height: $line-height;
+    }
   }
 }

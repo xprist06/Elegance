@@ -9,7 +9,8 @@
         <div class="filter"></div>
       </figure>
       <div class="text-content">
-        <h1>Invest in Elegance</h1>
+        <h1 v-if="!isMobileView">Invest in Elegance</h1>
+        <h2 v-if="isMobileView">Invest in Elegance</h2>
         <p>
           Dedicated to Developing, Acquiring, and Managing a Diversified
           Portfolio of Luxury Properties
@@ -107,6 +108,24 @@ export default {
   name: 'HomePage',
   components: {
     PortfolioItems,
+  },
+  data() {
+    return {
+      isMobileView: false,
+    };
+  },
+  mounted() {
+    this.checkMobileView();
+
+    window.addEventListener('resize', this.checkMobileView);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobileView);
+  },
+  methods: {
+    checkMobileView() {
+      this.isMobileView = window.innerWidth < 650;
+    },
   },
 };
 </script>

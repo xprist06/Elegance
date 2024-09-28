@@ -4,13 +4,8 @@
 
   .contact-form {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100%;
-  }
-
-  .left-side,
-  .right-side {
-    padding-top: 160px;
   }
 
   .left-side {

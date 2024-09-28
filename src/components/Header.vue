@@ -1,27 +1,69 @@
 <template>
   <header>
-    <nav class="nav-left">
-      <ul>
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/contact">Contact</router-link></li>
-      </ul>
-    </nav>
-    <div class="logo">
-      <router-link to="/">
-        <img src="@/assets/images/logo.png" alt="Logo" />
-      </router-link>
+    <div class="content-top">
+      <nav class="nav-left" v-if="!isMobileView">
+        <ul>
+          <li><router-link to="/about">About</router-link></li>
+          <li><router-link to="/contact">Contact</router-link></li>
+        </ul>
+      </nav>
+      <div class="logo">
+        <router-link to="/">
+          <img
+            :src="
+              isMobileView
+                ? require('@/assets/images/logo-header-mobile.png')
+                : require('@/assets/images/logo.png')
+            "
+            alt="Logo"
+          />
+        </router-link>
+      </div>
+      <div class="hamburger" @click="toggleMenu" v-if="isMobileView">
+        <img src="@/assets/images/mobile-menu-icon.png" alt="" />
+      </div>
     </div>
-    <!-- <nav class="nav-right">
-      <ul>
-        <li><router-link to="/clients">Investors-clients</router-link></li>
-      </ul>
-    </nav> -->
+    <transition name="slide-fade">
+      <nav
+        class="mobile-navbar"
+        :class="{ 'nav-active': isMenuOpen }"
+        v-if="isMobileView"
+      >
+        <ul>
+          <li><router-link to="/about">About</router-link></li>
+          <li><router-link to="/contact">Contact</router-link></li>
+        </ul>
+      </nav>
+    </transition>
   </header>
 </template>
 
 <script>
 export default {
   name: 'AppHeader',
+
+  data() {
+    return {
+      isMobileView: false,
+      isMenuOpen: false,
+    };
+  },
+  mounted() {
+    this.checkMobileView();
+
+    window.addEventListener('resize', this.checkMobileView);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobileView);
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+    },
+    checkMobileView() {
+      this.isMobileView = window.innerWidth < 992;
+    },
+  },
 };
 </script>
 
@@ -31,16 +73,68 @@ export default {
 @import '@/assets/scss/variables';
 
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  flex-direction: column;
+  align-items: flex-end;
   background-color: $header-bg;
-  padding: 70px 180px;
-  z-index: 99;
+  padding: 51px 24px;
+
+  .content-top {
+    position: relative;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .content-top {
+    display: flex;
+  }
 }
 
 a {
   color: $text-color-dark;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+
+.mobile-navbar {
+  display: none;
+  width: 100%;
+
+  &.nav-active {
+    display: flex;
+    padding: 2rem 0 0;
+  }
+
+  ul {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    padding: 70px 180px;
+
+    .content-top,
+    .content-bottom {
+      justify-content: flex-start;
+    }
+  }
+
+  .logo {
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-left {
+    ul {
+      gap: 20px;
+    }
+  }
 }
 </style>

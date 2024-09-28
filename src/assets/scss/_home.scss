@@ -5,9 +5,9 @@
   }
 
   figure {
-    width: 100%;
+    width: 90%;
     aspect-ratio: 1.5/1;
-    padding-top: 10rem;
+    padding-top: 20px;
 
     img {
       width: 100%;
@@ -17,7 +17,7 @@
   }
 
   p {
-    text-align: center;
+    text-align: left;
   }
 
   h2 {
@@ -35,7 +35,7 @@
     }
 
     &.info-text {
-      width: 60%;
+      width: 90%;
     }
   }
 
@@ -57,20 +57,30 @@
       left: 50%;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 2rem;
       transform: translate(-50%, -50%);
-      width: 700px;
+      width: clamp(300px, 700px, 90%);
 
       h1,
+      h2,
       p {
         color: $text-color-light;
         text-align: center;
       }
 
       p {
-        font-size: $font-size-md;
+        font-size: $font-size-base;
         text-transform: uppercase;
       }
+    }
+  }
+
+  #for-clients {
+    h2,
+    p.intro-text {
+      width: 90%;
+      text-align: left;
     }
   }
 
@@ -103,7 +113,7 @@
     }
 
     figure {
-      padding-bottom: 10rem;
+      padding-bottom: 40px;
     }
 
     .grid-container {
@@ -120,10 +130,6 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-
-      p {
-        text-align: left;
-      }
     }
   }
 
@@ -138,7 +144,6 @@
       justify-content: center;
       gap: 2rem;
       width: 100%;
-      padding: 10rem 1rem 0;
       aspect-ratio: 1 / 1.65;
 
       &:hover {
@@ -192,7 +197,6 @@
         display: flex;
         flex-direction: column;
         transform: translate(-50%, -25%);
-        text-align: center;
         width: 70%;
         gap: 1rem;
 
@@ -208,7 +212,6 @@
         }
 
         p {
-          text-align: left;
           transform: translateY(50%);
         }
       }
@@ -222,6 +225,38 @@
 
 @media screen and (min-width: 650px) {
   #home {
+    p {
+      &.info-text {
+        width: 60%;
+        text-align: center;
+      }
+    }
+
+    figure {
+      padding-top: 10rem;
+    }
+
+    #title {
+      .text-content {
+        p {
+          font-size: $font-size-md;
+        }
+      }
+    }
+
+    #for-clients {
+      h2,
+      p.intro-text {
+        text-align: center;
+      }
+    }
+
+    #investment {
+      figure {
+        padding-bottom: 10rem;
+      }
+    }
+
     #projects {
       .row {
         aspect-ratio: initial;
@@ -257,6 +292,7 @@
 
           h3,
           p {
+            scale: 1;
             opacity: 1;
             color: $text-color-dark;
           }
@@ -300,8 +336,15 @@
     #projects {
       .row {
         gap: 7rem;
-        padding: 10rem 0 0;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #home {
+    figure {
+      width: 100%;
     }
   }
 }
