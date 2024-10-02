@@ -101,7 +101,14 @@
         </div>
       </div>
     </section>
-    <section id="projects"></section>
+    <section id="projects">
+      <div class="container">
+        <div class="vertical-delimiter"></div>
+        <p class="intro-text">portfolio</p>
+        <h2>Our most recent projects</h2>
+        <projects-items></projects-items>
+      </div>
+    </section>
     <section id="our-team">
       <div class="container">
         <div class="vertical-delimiter"></div>
@@ -115,11 +122,13 @@
 
 <script>
 import TeamCards from '../components/TeamCards.vue';
+import ProjectsItems from '@/components/Projects.vue';
 
 export default {
   name: 'AboutPage',
   components: {
     TeamCards,
+    ProjectsItems,
   },
   data() {
     return {

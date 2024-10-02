@@ -6,6 +6,19 @@
       :class="{ row: true, 'row-reverse': index % 2 === 1 }"
     >
       <figure>
+        <!-- <video-player
+          v-if="item.video"
+          class="video-player"
+          ref="videoPlayer"
+          :options="getVideoOptions(item.video)"
+          :playsinline="true"
+        ></video-player>
+
+        <img
+          v-else
+          :src="require(`@/assets/images/${item.image}`)"
+          :alt="item.title"
+        /> -->
         <img
           :src="require(`@/assets/images/${item.image}`)"
           :alt="item.title"
@@ -20,6 +33,8 @@
 </template>
 
 <script>
+// import 'video.js/dist/video-js.css';
+// import { VideoPlayer } from '@videojs-player/vue';
 import data from '@/assets/data/portfolio.json';
 
 export default {
@@ -29,6 +44,26 @@ export default {
       items: data,
     };
   },
+  // beforeUnmount() {
+  //   if (this.$refs.videoPlayer) {
+  //     this.$refs.videoPlayer.dispose();
+  //   }
+  // },
+  // methods: {
+  //   getVideoOptions(videoSrc) {
+  //     return {
+  //       controls: true,
+  //       autoplay: false,
+  //       aspectRatio: '16:9', // Customize as needed
+  //       sources: [
+  //         {
+  //           src: require(`@/assets/videos/${videoSrc}`), // Use video path
+  //           type: 'video/mp4',
+  //         },
+  //       ],
+  //     };
+  //   },
+  // },
 };
 </script>
 
