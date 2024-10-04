@@ -13,7 +13,7 @@
           />
         </figure>
         <div class="image-slider">
-          <carousel :items-to-show="1">
+          <carousel :items-to-show="1" :transition="1500">
             <slide v-for="image in item.images" :key="image">
               <img
                 :src="require(`@/assets/images/projects/${image}`)"
