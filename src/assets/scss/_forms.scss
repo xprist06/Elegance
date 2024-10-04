@@ -55,9 +55,28 @@ button {
   width: calc(100% - 40px);
   padding: 1.5rem 0;
   margin-top: 2rem;
-  border: none;
-  background-color: $color-brown;
-  color: $text-color-light;
+  border: 1px solid $color-brown;
   cursor: pointer;
   font-weight: $font-weight-medium;
+  transition: all 0.5s ease;
+
+  &.light {
+    color: $text-color-brown;
+    background-color: transparent;
+
+    &:hover {
+      color: $text-color-light;
+      background-color: $color-brown;
+    }
+  }
+
+  &.dark {
+    color: $text-color-light;
+    background-color: $color-brown;
+
+    &:hover {
+      color: $text-color-brown;
+      background-color: transparent;
+    }
+  }
 }

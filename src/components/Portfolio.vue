@@ -71,7 +71,8 @@ export default {
 .row-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 4rem;
+  width: 90%;
 }
 
 @media screen and (min-width: 650px) {

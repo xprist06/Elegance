@@ -16,6 +16,7 @@
                 : require('@/assets/images/logo.png')
             "
             alt="Logo"
+            @click="closeMenu"
           />
         </router-link>
       </div>
@@ -29,8 +30,12 @@
         v-if="isMobileView"
       >
         <ul>
-          <li><router-link to="/about">About</router-link></li>
-          <li><router-link to="/contact">Contact</router-link></li>
+          <li>
+            <router-link to="/about" @click="closeMenu">About</router-link>
+          </li>
+          <li>
+            <router-link to="/contact" @click="closeMenu">Contact</router-link>
+          </li>
         </ul>
       </nav>
     </transition>
@@ -62,6 +67,9 @@ export default {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 992;
     },
+    closeMenu() {
+      this.isMenuOpen = false;
+    },
   },
 };
 </script>
@@ -72,10 +80,15 @@ export default {
 @import '@/assets/scss/variables';
 
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   flex-direction: column;
   align-items: flex-end;
   background-color: $header-bg;
   padding: 51px 24px;
+  z-index: 99;
 
   .content-top {
     position: relative;
@@ -118,7 +131,7 @@ a {
 
 @media screen and (min-width: 992px) {
   header {
-    padding: 70px 180px;
+    padding: 51px 180px;
 
     .content-top,
     .content-bottom {
@@ -128,12 +141,27 @@ a {
 
   .logo {
     transform: translate(-50%, -50%);
+
+    a {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 75%;
+      }
+    }
   }
 
   .nav-left {
     ul {
       gap: 20px;
     }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  header {
+    padding: 70px 180px;
   }
 }
 </style>

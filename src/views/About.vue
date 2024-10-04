@@ -11,7 +11,7 @@
     </section>
     <section id="about-us">
       <div class="container">
-        <div class="vertical-delimiter"></div>
+        <div class="vertical-delimiter no-margin"></div>
         <div id="experience">
           <div>
             <h1 v-if="isMobileView">+10</h1>

@@ -58,7 +58,7 @@
             </label>
           </div>
 
-          <button type="submit">Submit your message</button>
+          <button type="submit" class="dark">Submit your message</button>
         </form>
       </div>
     </div>

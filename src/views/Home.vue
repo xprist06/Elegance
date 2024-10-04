@@ -19,7 +19,7 @@
     </section>
     <section id="for-clients">
       <div class="container">
-        <div class="vertical-delimiter"></div>
+        <div v-if="!isMobileView" class="vertical-delimiter"></div>
         <p class="intro-text">for our clients</p>
         <h2>
           <span>Attractive returns</span> by capitalising unique market
@@ -43,17 +43,18 @@
     </section>
     <section id="investment">
       <div class="container">
-        <div class="vertical-delimiter"></div>
+        <div v-if="!isMobileView" class="vertical-delimiter"></div>
         <p class="intro-text">for our clients</p>
-        <h2>exclusive access to purchase premier residential projects</h2>
+        <h2>Exclusive access to purchase premier residential projects</h2>
         <figure>
           <img
             src="@/assets/images/homepage-investment.jpg"
             alt="Investment illustration image"
           />
         </figure>
-        <div class="vertical-delimiter"></div>
-        <h2>why to invest in elegance</h2>
+        <div v-if="!isMobileView" class="vertical-delimiter"></div>
+        <h2 v-if="!isTabletView">why to invest in elegance</h2>
+        <h1 v-if="isTabletView">why to invest in elegance</h1>
         <div class="grid-container">
           <div class="grid-item">
             <h3>Growing Market</h3>
@@ -95,6 +96,9 @@
         <div class="vertical-delimiter"></div>
         <p class="intro-text">our most recent projects </p>
         <h2>unique Properties with <span>prime locations</span></h2>
+        <div class="btn-wrapper">
+          <button class="light">see more properties</button>
+        </div>
         <portfolio-items></portfolio-items>
       </div>
     </section>
@@ -112,19 +116,27 @@ export default {
   data() {
     return {
       isMobileView: false,
+      isTabletView: false,
     };
   },
   mounted() {
     this.checkMobileView();
+    this.checkTabletView();
 
     window.addEventListener('resize', this.checkMobileView);
+    window.addEventListener('resize', this.checkTabletView);
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);
+    window.removeEventListener('resize', this.checkTabletView);
   },
   methods: {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 650;
+    },
+
+    checkTabletView() {
+      this.isTabletView = window.innerWidth < 992;
     },
   },
 };

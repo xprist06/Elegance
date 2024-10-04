@@ -60,11 +60,16 @@ export default {
 
 <style lang="scss" scoped>
 .row-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
   width: 90%;
+  padding-top: 1rem;
 
   .row {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4rem;
   }
 }
