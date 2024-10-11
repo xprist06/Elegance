@@ -80,10 +80,6 @@ export default {
 @import '@/assets/scss/variables';
 
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   flex-direction: column;
   align-items: flex-end;
   background-color: $header-bg;

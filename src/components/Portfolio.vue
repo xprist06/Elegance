@@ -20,13 +20,14 @@
           :alt="item.title"
         /> -->
         <img
+          class="reveal"
           :src="require(`@/assets/images/${item.image}`)"
           :alt="item.title"
         />
       </figure>
       <div class="content">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
+        <h3 class="reveal">{{ item.title }}</h3>
+        <p class="reveal">{{ item.description }}</p>
       </div>
     </div>
   </div>
@@ -35,6 +36,7 @@
 <script>
 // import 'video.js/dist/video-js.css';
 // import { VideoPlayer } from '@videojs-player/vue';
+import ScrollReveal from 'scrollreveal';
 import data from '@/assets/data/portfolio.json';
 
 export default {
@@ -43,6 +45,15 @@ export default {
     return {
       items: data,
     };
+  },
+  mounted() {
+    ScrollReveal().reveal('.reveal', {
+      distance: '50px', // Distance the element moves
+      duration: 800, // Duration of animation
+      easing: 'ease-in-out', // Type of easing
+      origin: 'bottom', // Where the animation starts (top, right, bottom, left)
+      interval: 100, // Delay between animations
+    });
   },
   // beforeUnmount() {
   //   if (this.$refs.videoPlayer) {

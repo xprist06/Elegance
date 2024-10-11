@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import ScrollReveal from 'scrollreveal';
 import data from '@/assets/data/team.json';
 
 export default {
@@ -61,21 +62,28 @@ export default {
     width: 90%;
     padding: 2rem;
     gap: 1rem;
+
+    h2 {
+      font-size: $font-size-xxl;
+    }
   }
 }
 
 @media screen and (min-width: 992px) {
   .cards-wrapper {
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 90%;
 
     .card {
+      max-width: 440px;
       gap: 1.5rem;
     }
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
   .cards-wrapper {
     width: 100%;
   }

@@ -6,7 +6,9 @@
         <div class="filter"></div>
       </figure>
       <div class="text-content">
-        <h2>investing in luxury real estates</h2>
+        <h2 :class="{ 'header-xl': isMobileView }">
+          investing in luxury real estates
+        </h2>
       </div>
     </section>
     <section id="about-us">
@@ -121,6 +123,8 @@
 </template>
 
 <script>
+import ScrollReveal from 'scrollreveal';
+
 import TeamCards from '../components/TeamCards.vue';
 import ProjectsItems from '@/components/Projects.vue';
 
@@ -139,6 +143,14 @@ export default {
     this.checkMobileView();
 
     window.addEventListener('resize', this.checkMobileView);
+
+    ScrollReveal().reveal('.reveal', {
+      distance: '50px', // Distance the element moves
+      duration: 800, // Duration of animation
+      easing: 'ease-in-out', // Type of easing
+      origin: 'bottom', // Where the animation starts (top, right, bottom, left)
+      interval: 100, // Delay between animations
+    });
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);

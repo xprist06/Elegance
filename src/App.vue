@@ -5,17 +5,16 @@
 </template>
 
 <script>
-import AppHeader from './components/Header.vue'
-import AppFooter from './components/Footer.vue'
+import AppHeader from './components/Header.vue';
+import AppFooter from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppFooter
-  }
-}
+    AppFooter,
+  },
+};
 </script>
 
-<style>
-</style>
+<style></style>

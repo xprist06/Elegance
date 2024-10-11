@@ -13,7 +13,13 @@
           />
         </figure>
         <div class="image-slider">
-          <carousel :items-to-show="1" :transition="1500">
+          <carousel
+            :items-to-show="1"
+            :transition="1500"
+            :autoplay="2000"
+            :wrap-around="true"
+            pause-autoplay-on-hover
+          >
             <slide v-for="image in item.images" :key="image">
               <img
                 :src="require(`@/assets/images/projects/${image}`)"
@@ -37,6 +43,7 @@
 </template>
 
 <script>
+import ScrollReveal from 'scrollreveal';
 import data from '@/assets/data/projects.json';
 
 import 'vue3-carousel/dist/carousel.css';
@@ -44,16 +51,25 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 export default {
   name: 'ProjectsItems',
-  data() {
-    return {
-      items: data,
-    };
-  },
   components: {
     Carousel,
     Slide,
     Pagination,
     Navigation,
+  },
+  data() {
+    return {
+      items: data,
+    };
+  },
+  mounted() {
+    ScrollReveal().reveal('.reveal', {
+      distance: '50px', // Distance the element moves
+      duration: 800, // Duration of animation
+      easing: 'ease-in-out', // Type of easing
+      origin: 'bottom', // Where the animation starts (top, right, bottom, left)
+      interval: 100, // Delay between animations
+    });
   },
 };
 </script>
@@ -74,9 +90,14 @@ export default {
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
   .row-wrapper {
     width: 100%;
+    gap: 8rem;
+
+    .row {
+      gap: 8rem;
+    }
   }
 }
 </style>

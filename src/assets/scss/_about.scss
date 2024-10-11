@@ -42,7 +42,7 @@
   #title {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 125px);
 
     figure {
       position: relative;
@@ -312,6 +312,10 @@
 
 @media screen and (min-width: 992px) {
   #about {
+    #title {
+      height: calc(60vh - 125px);
+    }
+
     #about-us,
     #projects,
     #our-team {
@@ -359,6 +363,10 @@
 
           .card {
             margin: 0;
+
+            h2 {
+              font-size: $font-size-xxl;
+            }
           }
         }
       }
@@ -419,7 +427,7 @@
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
   #about {
     figure {
       width: 100%;
@@ -437,21 +445,29 @@
       }
     }
 
-    #projects {
-      .image-content-wrapper {
-        .image-slider {
-          .carousel__prev,
-          .carousel__next {
-            display: flex;
-            border-radius: 50%;
+    // #projects {
+    //   .image-content-wrapper {
+    //     .image-slider {
+    //       .carousel__prev,
+    //       .carousel__next {
+    //         display: flex;
+    //         border-radius: 50%;
 
-            &:hover {
-              background-color: $color-brown;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            }
-          }
-        }
-      }
+    //         &:hover {
+    //           background-color: $color-brown;
+    //           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #about {
+    #title {
+      height: calc(60vh - 163px);
     }
   }
 }
