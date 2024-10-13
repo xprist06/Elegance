@@ -89,7 +89,7 @@ export default {
 @media screen and (min-width: 650px) {
   .row-wrapper {
     gap: 10rem;
-    padding-top: 10rem;
+    padding-top: 9rem;
   }
 }
 </style>

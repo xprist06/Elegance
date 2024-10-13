@@ -61,7 +61,6 @@ export default {
     border: 1px solid $color-brown;
     width: 90%;
     padding: 2rem;
-    gap: 1rem;
 
     h2 {
       font-size: $font-size-xxl;
@@ -75,10 +74,10 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     width: 90%;
+    padding-top: 4rem;
 
     .card {
       max-width: 440px;
-      gap: 1.5rem;
     }
   }
 }

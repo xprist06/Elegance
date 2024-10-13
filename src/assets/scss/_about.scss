@@ -49,6 +49,10 @@
       width: 100%;
       height: 100%;
       padding: 0;
+
+      img {
+        object-position: center 90%;
+      }
     }
 
     .text-content {
@@ -80,7 +84,7 @@
   #projects,
   #our-team {
     .container {
-      padding: 5rem 0;
+      padding: 8rem 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -96,13 +100,13 @@
     }
 
     .container {
-      gap: 4rem;
+      gap: 5rem;
     }
 
     #experience {
       display: flex;
       flex-direction: column;
-      gap: 65px;
+      gap: 5rem;
       align-items: center;
 
       h1,
@@ -121,9 +125,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
       width: 90%;
-      padding-bottom: 1rem;
 
       .company-wrapper,
       .content-wrapper {
@@ -138,7 +140,7 @@
 
       figure {
         padding: 0;
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
       }
     }
 
@@ -281,6 +283,7 @@
 
     .container {
       gap: 2rem;
+      padding: 7rem 0;
     }
 
     .card {
@@ -326,11 +329,16 @@
     #projects,
     #our-team {
       .container {
-        padding: 10rem 0;
+        padding: 12rem 0;
       }
     }
 
     #about-us {
+      .container {
+        gap: 3rem;
+        padding-bottom: 14rem;
+      }
+
       #experience {
         flex-direction: row;
         justify-content: space-between;
@@ -353,10 +361,14 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
         }
+
+        figure {
+          padding-top: 4rem;
+        }
       }
 
       #our-job {
-        margin-top: 5rem;
+        margin-top: 9rem;
         gap: 2rem;
 
         h2 {
@@ -366,6 +378,7 @@
         .card-wrapper {
           flex-direction: row;
           gap: 2rem;
+          padding-top: 2rem;
 
           .card {
             margin: 0;
@@ -379,6 +392,10 @@
     }
 
     #our-team {
+      .container {
+        padding-top: 2rem;
+      }
+
       .card {
         figure {
           position: relative;
@@ -413,6 +430,10 @@
     }
 
     #projects {
+      .container {
+        padding-top: 10rem;
+      }
+
       .image-content-wrapper {
         flex-direction: row;
         max-height: 730px;

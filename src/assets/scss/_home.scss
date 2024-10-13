@@ -90,7 +90,7 @@
   #investment,
   #projects {
     .container {
-      padding: 5rem 0;
+      padding: 8rem 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -141,6 +141,10 @@
   }
 
   #projects {
+    .container {
+      padding-top: 7rem;
+    }
+
     .vertical-delimiter {
       background-color: $color-dark;
     }
@@ -209,7 +213,7 @@
     #investment,
     #projects {
       .container {
-        padding: 10rem 0;
+        padding: 14rem 0;
       }
     }
 
@@ -217,6 +221,10 @@
       h2,
       p.intro-text {
         text-align: center;
+      }
+
+      figure {
+        padding-bottom: 2rem;
       }
     }
 
@@ -227,6 +235,10 @@
 
       figure {
         padding-bottom: 9rem;
+      }
+
+      .container {
+        padding-top: 10rem;
       }
 
       .vertical-delimiter {
@@ -240,6 +252,10 @@
     }
 
     #projects {
+      .container {
+        padding-top: 5rem;
+      }
+
       .btn-wrapper {
         button {
           width: 290px;
@@ -280,7 +296,7 @@
   #home {
     #investment {
       .vertical-delimiter {
-        margin-bottom: 27px;
+        margin-bottom: 10px;
       }
 
       .grid-container {

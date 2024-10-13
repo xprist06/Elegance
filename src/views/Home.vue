@@ -117,6 +117,9 @@
       </div>
     </section>
   </div>
+  <figure class="arch">
+    <img src="@/assets/images/arches/green-arch.png" />
+  </figure>
 </template>
 
 <script>

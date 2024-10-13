@@ -90,6 +90,12 @@ export default {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .row-wrapper {
+    padding-top: 3rem;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .row-wrapper {
     width: 100%;
