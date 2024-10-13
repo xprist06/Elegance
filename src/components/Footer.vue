@@ -1,4 +1,7 @@
 <template>
+  <figure class="arch">
+    <img src="@/assets/images/arches/green-arch.png" />
+  </figure>
   <footer>
     <div class="content-top">
       <nav class="nav-left">

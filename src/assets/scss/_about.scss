@@ -89,6 +89,8 @@
   }
 
   #about-us {
+    position: relative;
+
     .vertical-delimiter.no-margin {
       margin-bottom: 0;
     }
@@ -314,6 +316,10 @@
   #about {
     #title {
       height: calc(60vh - 125px);
+
+      .text-content {
+        top: 49%;
+      }
     }
 
     #about-us,
@@ -444,30 +450,13 @@
         }
       }
     }
-
-    // #projects {
-    //   .image-content-wrapper {
-    //     .image-slider {
-    //       .carousel__prev,
-    //       .carousel__next {
-    //         display: flex;
-    //         border-radius: 50%;
-
-    //         &:hover {
-    //           background-color: $color-brown;
-    //           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
   }
 }
 
 @media screen and (min-width: 1600px) {
   #about {
     #title {
-      height: calc(60vh - 163px);
+      height: calc(65vh - 163px);
     }
   }
 }

@@ -12,6 +12,13 @@
       </div>
     </section>
     <section id="about-us">
+      <figure class="arch golden" :style="{ '--top-value': topValue }">
+        <img
+          src="@/assets/images/arches/golden-arch.png"
+          ref="archImage"
+          @load="setTopValue"
+        />
+      </figure>
       <div class="container">
         <div class="vertical-delimiter no-margin"></div>
         <div id="experience">
@@ -103,6 +110,9 @@
         </div>
       </div>
     </section>
+    <figure class="arch">
+      <img src="@/assets/images/arches/green-arch.png" />
+    </figure>
     <section id="projects">
       <div class="container">
         <div class="vertical-delimiter"></div>
@@ -111,6 +121,9 @@
         <projects-items></projects-items>
       </div>
     </section>
+    <figure class="arch">
+      <img src="@/assets/images/arches/green-arch-xl.png" />
+    </figure>
     <section id="our-team">
       <div class="container">
         <div class="vertical-delimiter"></div>
@@ -137,12 +150,14 @@ export default {
   data() {
     return {
       isMobileView: false,
+      topValue: '0px',
     };
   },
   mounted() {
     this.checkMobileView();
 
     window.addEventListener('resize', this.checkMobileView);
+    window.addEventListener('resize', this.setTopValue);
 
     ScrollReveal().reveal('.reveal', {
       distance: '50px', // Distance the element moves
@@ -154,10 +169,16 @@ export default {
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);
+    window.removeEventListener('resize', this.setTopValue);
   },
   methods: {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 992;
+    },
+
+    setTopValue() {
+      const width = this.$refs.archImage.clientWidth;
+      this.topValue = `-${width / 31}px`;
     },
   },
 };

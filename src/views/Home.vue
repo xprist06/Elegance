@@ -18,6 +18,13 @@
       </div>
     </section>
     <section id="for-clients">
+      <figure class="arch golden" :style="{ '--top-value': topValue }">
+        <img
+          src="@/assets/images/arches/golden-arch.png"
+          ref="archImage"
+          @load="setTopValue"
+        />
+      </figure>
       <div class="container">
         <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
         <p class="intro-text reveal">for our clients</p>
@@ -42,6 +49,9 @@
         </figure>
       </div>
     </section>
+    <figure class="arch">
+      <img src="@/assets/images/arches/green-arch.png" />
+    </figure>
     <section id="investment">
       <div class="container">
         <div v-if="!isMobileView" class="vertical-delimiter"></div>
@@ -92,6 +102,9 @@
         </div>
       </div>
     </section>
+    <figure class="arch">
+      <img src="@/assets/images/arches/green-arch-xl.png" />
+    </figure>
     <section id="projects">
       <div class="container">
         <div class="vertical-delimiter"></div>
@@ -119,6 +132,7 @@ export default {
     return {
       isMobileView: false,
       isTabletView: false,
+      topValue: '0px',
     };
   },
   mounted() {
@@ -127,6 +141,7 @@ export default {
 
     window.addEventListener('resize', this.checkMobileView);
     window.addEventListener('resize', this.checkTabletView);
+    window.addEventListener('resize', this.setTopValue);
 
     ScrollReveal().reveal('.reveal', {
       distance: '50px', // Distance the element moves
@@ -139,6 +154,7 @@ export default {
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);
     window.removeEventListener('resize', this.checkTabletView);
+    window.removeEventListener('resize', this.setTopValue);
   },
   methods: {
     checkMobileView() {
@@ -147,6 +163,11 @@ export default {
 
     checkTabletView() {
       this.isTabletView = window.innerWidth < 992;
+    },
+
+    setTopValue() {
+      const width = this.$refs.archImage.clientWidth;
+      this.topValue = `-${width / 30}px`;
     },
   },
 };
