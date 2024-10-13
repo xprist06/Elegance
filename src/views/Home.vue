@@ -20,7 +20,7 @@
     <section id="for-clients">
       <figure class="arch golden" :style="{ '--top-value': topValue }">
         <img
-          src="@/assets/images/arches/golden-arch.png"
+          src="@/assets/images/arches/golden-arch.svg"
           ref="archImage"
           @load="setTopValue"
         />
