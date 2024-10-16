@@ -51,7 +51,7 @@
           <div class="form-group">
             <textarea
               v-model="formData.message"
-              rows="6"
+              rows="2"
               placeholder="Message*"
               required
             ></textarea>

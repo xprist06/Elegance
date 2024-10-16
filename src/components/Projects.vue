@@ -6,13 +6,13 @@
       :class="{ row: true, 'row-reverse': index % 2 === 1 }"
     >
       <div class="image-content-wrapper">
-        <figure>
+        <figure class="reveal">
           <img
             :src="require(`@/assets/images/${item.video}`)"
             :alt="item.title"
           />
         </figure>
-        <div class="image-slider">
+        <div class="image-slider reveal">
           <carousel
             :items-to-show="1"
             :transition="1500"
@@ -35,8 +35,8 @@
         </div>
       </div>
       <div class="text-content-wrapper">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
+        <h3 class="reveal">{{ item.title }}</h3>
+        <p class="reveal">{{ item.description }}</p>
       </div>
     </div>
   </div>

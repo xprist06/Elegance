@@ -3,10 +3,9 @@
     <section id="title">
       <figure>
         <img
-          src="@/assets/images/homepage-title.png"
+          src="@/assets/images/homepage-title.jpg"
           alt="Homepage title image"
         />
-        <div class="filter"></div>
       </figure>
       <div class="text-content">
         <h1 v-if="!isMobileView" class="reveal">Invest in Elegance</h1>
@@ -54,46 +53,50 @@
     </figure>
     <section id="investment">
       <div class="container">
-        <div v-if="!isMobileView" class="vertical-delimiter"></div>
-        <p class="intro-text">for our clients</p>
-        <h2>Exclusive access to purchase premier residential projects</h2>
-        <figure>
+        <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
+        <p class="intro-text reveal">for our clients</p>
+        <h2 class="reveal">
+          Exclusive access to purchase premier residential projects
+        </h2>
+        <figure class="reveal">
           <img
             src="@/assets/images/homepage-investment.jpg"
             alt="Investment illustration image"
           />
         </figure>
-        <div v-if="!isMobileView" class="vertical-delimiter"></div>
-        <h2 v-if="!isTabletView" class="w-500">why to invest in elegance</h2>
-        <h1 v-if="isTabletView">why to invest in elegance</h1>
+        <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
+        <h2 v-if="!isTabletView" class="w-500 reveal">
+          why to invest in elegance
+        </h2>
+        <h1 v-if="isTabletView" class="reveal">why to invest in elegance</h1>
         <div class="grid-container">
           <div class="grid-item">
-            <h3>Growing Market</h3>
-            <p>
+            <h3 class="reveal">Growing Market</h3>
+            <p class="reveal">
               The global demand for luxury properties continues to rise, driven
               by high-net-worth individuals (1M+ USD) and ultra-high-net-worth
               individuals (30M+ USD), as well as international buyers.
             </p>
           </div>
           <div class="grid-item">
-            <h3>Stability</h3>
-            <p>
+            <h3 class="reveal">Stability</h3>
+            <p class="reveal">
               Historically, luxury real estate has shown resilience to market
               downturns and has offered attractive returns. Prime locations tend
               to experience steady appreciation in property values.
             </p>
           </div>
           <div class="grid-item">
-            <h3>Risk diversification</h3>
-            <p>
+            <h3 class="reveal">Risk diversification</h3>
+            <p class="reveal">
               Luxury properties have historically demonstrated low correlation
               with traditional asset classes such as stocks and bonds, making
               them a valuable addition to investment portfolios.
             </p>
           </div>
           <div class="grid-item">
-            <h3>Lifestyle benefits</h3>
-            <p>
+            <h3 class="reveal">Lifestyle benefits</h3>
+            <p class="reveal">
               Ownership of luxury properties offers lifestyle perks, prestige,
               and personal enjoyment. Luxury properties can serve as private
               retreats, vacation homes, or legacy assets for future generations.
@@ -107,11 +110,13 @@
     </figure>
     <section id="projects">
       <div class="container">
-        <div class="vertical-delimiter"></div>
-        <p class="intro-text">our most recent projects </p>
-        <h2>unique Properties with <span>prime locations</span></h2>
+        <div class="vertical-delimiter reveal"></div>
+        <p class="intro-text reveal">our most recent projects </p>
+        <h2 class="reveal">
+          unique Properties with <span>prime locations</span>
+        </h2>
         <div class="btn-wrapper">
-          <button class="light">see more properties</button>
+          <button class="light reveal">see more properties</button>
         </div>
         <portfolio-items></portfolio-items>
       </div>

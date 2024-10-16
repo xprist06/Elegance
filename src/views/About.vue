@@ -6,7 +6,7 @@
         <div class="filter"></div>
       </figure>
       <div class="text-content">
-        <h2 :class="{ 'header-xl': isMobileView }">
+        <h2 :class="{ 'header-xl': isMobileView, reveal: true }">
           investing in luxury real estates
         </h2>
       </div>
@@ -20,44 +20,44 @@
         />
       </figure>
       <div class="container">
-        <div class="vertical-delimiter no-margin"></div>
+        <div class="vertical-delimiter no-margin reveal"></div>
         <div id="experience">
           <div>
-            <h1 v-if="isMobileView">+10</h1>
-            <h2 v-if="!isMobileView">+10</h2>
-            <p>YEARS OF EXPERIENCE WITH REDEVELOPMENT</p>
+            <h1 v-if="isMobileView" class="reveal">+10</h1>
+            <h2 v-if="!isMobileView" class="reveal">+10</h2>
+            <p class="reveal">YEARS OF EXPERIENCE WITH REDEVELOPMENT</p>
           </div>
           <div>
-            <h1 v-if="isMobileView">+10</h1>
-            <h2 v-if="!isMobileView">+10</h2>
-            <p>PROJECTS CREATED</p>
+            <h1 v-if="isMobileView" class="reveal">+10</h1>
+            <h2 v-if="!isMobileView" class="reveal">+10</h2>
+            <p class="reveal">PROJECTS CREATED</p>
           </div>
           <div>
-            <h1 v-if="isMobileView">+32€ MIL</h1>
-            <h2 v-if="!isMobileView">+32€ MIL</h2>
-            <p>SHAREHOLDER'S EQUITY</p>
+            <h1 v-if="isMobileView" class="reveal">+32€ MIL</h1>
+            <h2 v-if="!isMobileView" class="reveal">+32€ MIL</h2>
+            <p class="reveal">SHAREHOLDER'S EQUITY</p>
           </div>
           <div>
-            <h1 v-if="isMobileView">4</h1>
-            <h2 v-if="!isMobileView">4</h2>
-            <p>COUNTRIES IN EUROPE</p>
+            <h1 v-if="isMobileView" class="reveal">4</h1>
+            <h2 v-if="!isMobileView" class="reveal">4</h2>
+            <p class="reveal">COUNTRIES IN EUROPE</p>
           </div>
         </div>
         <div id="company">
-          <figure>
+          <figure class="reveal">
             <img
               src="@/assets/images/about-company.jpg"
               alt="About our company"
             />
           </figure>
           <div class="company-wrapper">
-            <p class="intro-text">elegance</p>
+            <p class="intro-text reveal">elegance</p>
             <div class="content-wrapper">
-              <h2>
+              <h2 class="reveal">
                 Creating sustainable value and attractive returns for our
                 clients
               </h2>
-              <p class="info-text">
+              <p class="info-text reveal">
                 At Elegance, we specialize in developing, acquiring, and
                 managing a diverse portfolio of luxury properties. Our focus
                 includes small-scale luxury residential projects, transformative
@@ -71,14 +71,14 @@
           </div>
         </div>
         <div id="our-job">
-          <div class="vertical-delimiter"></div>
-          <p class="intro-text">what we do</p>
-          <h2>
+          <div class="vertical-delimiter reveal"></div>
+          <p class="intro-text reveal">what we do</p>
+          <h2 class="reveal">
             <span>developing, acquiring and managing portfolios of</span> luxury
             properties
           </h2>
           <div class="card-wrapper">
-            <div class="card">
+            <div class="card reveal">
               <figure>
                 <img
                   src="@/assets/images/about-company.jpg"
@@ -92,7 +92,7 @@
                 transformative refurbishments aimed at UHNWIs
               </p>
             </div>
-            <div class="card">
+            <div class="card reveal">
               <figure>
                 <img
                   src="@/assets/images/about-company.jpg"
@@ -115,9 +115,9 @@
     </figure>
     <section id="projects">
       <div class="container">
-        <div class="vertical-delimiter"></div>
-        <p class="intro-text">portfolio</p>
-        <h2>Our most recent projects</h2>
+        <div class="vertical-delimiter reveal"></div>
+        <p class="intro-text reveal">portfolio</p>
+        <h2 class="reveal">Our most recent projects</h2>
         <projects-items></projects-items>
       </div>
     </section>
@@ -126,9 +126,9 @@
     </figure>
     <section id="our-team">
       <div class="container">
-        <div class="vertical-delimiter"></div>
-        <p class="intro-text">our team</p>
-        <h2>meet the team</h2>
+        <div class="vertical-delimiter reveal"></div>
+        <p class="intro-text reveal">our team</p>
+        <h2 class="reveal">meet the team</h2>
         <team-cards></team-cards>
       </div>
     </section>

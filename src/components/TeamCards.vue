@@ -1,6 +1,10 @@
 <template>
   <div class="cards-wrapper">
-    <div v-for="item in items" :key="item.id" :class="{ card: true }">
+    <div
+      v-for="item in items"
+      :key="item.id"
+      :class="{ card: true, reveal: true }"
+    >
       <figure>
         <img
           :src="require(`@/assets/images/${item.image}`)"
@@ -31,6 +35,14 @@ export default {
     this.checkMobileView();
 
     window.addEventListener('resize', this.checkMobileView);
+
+    ScrollReveal().reveal('.reveal', {
+      distance: '50px', // Distance the element moves
+      duration: 800, // Duration of animation
+      easing: 'ease-in-out', // Type of easing
+      origin: 'bottom', // Where the animation starts (top, right, bottom, left)
+      interval: 100, // Delay between animations
+    });
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);
