@@ -1,6 +1,6 @@
 <template>
   <div class="cards-wrapper">
-    <div
+    <!-- <div
       v-for="item in items"
       :key="item.id"
       :class="{ card: true, reveal: true }"
@@ -15,6 +15,11 @@
       <h2>{{ item.title }}</h2>
       <p class="intro-text">{{ item.post }}</p>
       <p v-if="isMobileView">{{ item.description }}</p>
+    </div> -->
+    <div v-for="item in items" :key="item.id" class="card reveal">
+      <h2>{{ item.title }}</h2>
+      <p class="intro-text">{{ item.post }}</p>
+      <p>{{ item.description }}</p>
     </div>
   </div>
 </template>
@@ -61,17 +66,27 @@ export default {
 @import '@/assets/scss/variables';
 
 .cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 100%;
 
   .card {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // border: 1px solid $color-brown;
+    // width: 90%;
+    // padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100%;
+    max-width: 90%;
     border: 1px solid $color-brown;
-    width: 90%;
     padding: 2rem;
 
     h2 {
@@ -89,14 +104,21 @@ export default {
     padding-top: 4rem;
 
     .card {
-      max-width: 440px;
+      // max-width: 440px;
+      max-width: 330px;
+      gap: 1rem;
+
+      h2,
+      p {
+        text-align: left !important;
+      }
     }
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .cards-wrapper {
-    width: 100%;
-  }
-}
+// @media screen and (min-width: 1200px) {
+//   .cards-wrapper {
+//     width: 100%;
+//   }
+// }
 </style>

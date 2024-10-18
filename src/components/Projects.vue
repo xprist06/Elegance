@@ -8,7 +8,7 @@
       <div class="image-content-wrapper">
         <figure class="reveal">
           <img
-            :src="require(`@/assets/images/${item.video}`)"
+            :src="require(`@/assets/images/projects/${item.image}`)"
             :alt="item.title"
           />
         </figure>
@@ -20,7 +20,7 @@
             :wrap-around="true"
             pause-autoplay-on-hover
           >
-            <slide v-for="image in item.images" :key="image">
+            <slide v-for="image in item.sliderImages" :key="image">
               <img
                 :src="require(`@/assets/images/projects/${image}`)"
                 :alt="item.title"

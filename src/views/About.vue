@@ -30,7 +30,7 @@
           <div>
             <h1 v-if="isMobileView" class="reveal">+10</h1>
             <h2 v-if="!isMobileView" class="reveal">+10</h2>
-            <p class="reveal">PROJECTS CREATED</p>
+            <p class="reveal">projects designed and created</p>
           </div>
           <div>
             <h1 v-if="isMobileView" class="reveal">+32€ MIL</h1>
@@ -53,19 +53,17 @@
           <div class="company-wrapper">
             <p class="intro-text reveal">elegance</p>
             <div class="content-wrapper">
-              <h2 class="reveal">
-                Creating sustainable value and attractive returns for our
-                clients
-              </h2>
+              <h2 class="reveal">sustainable growth and attractive returns</h2>
               <p class="info-text reveal">
-                At Elegance, we specialize in developing, acquiring, and
-                managing a diverse portfolio of luxury properties. Our focus
-                includes small-scale luxury residential projects, transformative
+                We are dedicated to curating and managing a diverse portfolio of
+                luxury properties to elevate your investment. Specializing in
+                small-scale luxury residential projects, transformative
                 refurbishments for ultra-high-net-worth individuals, and
-                hospitality and mixed-use properties. We offer exclusive access
-                to prime residential projects in sought-after locations across
-                Europe, known for their scenic views, amenities, and superior
-                infrastructure.
+                exclusive hospitality and mixed-use properties, we provide you
+                with access to some of Europe’s most coveted locations. Each
+                property is chosen for its sublime views, impressive amenities,
+                and superior infrastructure, offering a luxurious lifestyle with
+                long-term value.
               </p>
             </div>
           </div>
@@ -74,8 +72,7 @@
           <div class="vertical-delimiter reveal"></div>
           <p class="intro-text reveal">what we do</p>
           <h2 class="reveal">
-            <span>developing, acquiring and managing portfolios of</span> luxury
-            properties
+            <span>develop, acquireand manage</span> luxury property portfolios
           </h2>
           <div class="card-wrapper">
             <div class="card reveal">
@@ -85,11 +82,11 @@
                   alt="About our company"
                 />
               </figure>
-              <p class="intro-text">main focus</p>
+              <p class="intro-text">OUR main focus</p>
               <h2>Value Creation</h2>
               <p>
-                Development of small-scale luxury residential projects and
-                transformative refurbishments aimed at UHNWIs
+                Designing and developing small-scale luxury residential projects
+                and transformative refurbishments aimed at UHNWIs
               </p>
             </div>
             <div class="card reveal">
@@ -99,11 +96,11 @@
                   alt="About our company"
                 />
               </figure>
-              <p class="intro-text">main focus</p>
-              <h2>Value Creation</h2>
+              <p class="intro-text">add-ons</p>
+              <h2>Stable Cash-flow</h2>
               <p>
-                Development of small-scale luxury residential projects and
-                transformative refurbishments aimed at UHNWIs
+                Assisting with the acquisition and management of hospitality and
+                mixed-use properties
               </p>
             </div>
           </div>
@@ -117,7 +114,7 @@
       <div class="container">
         <div class="vertical-delimiter reveal"></div>
         <p class="intro-text reveal">portfolio</p>
-        <h2 class="reveal">Our most recent projects</h2>
+        <h2 class="reveal">Our recent projects</h2>
         <projects-items></projects-items>
       </div>
     </section>

@@ -11,7 +11,7 @@
         <h1 v-if="!isMobileView" class="reveal">Invest in Elegance</h1>
         <h2 v-if="isMobileView" class="reveal header-xl">Invest in Elegance</h2>
         <p class="reveal">
-          Dedicated to Developing, Acquiring, and Managing a Diversified
+          Dedicated to Developing, Acquiring, and Managinga Diversified
           Portfolio of Luxury Properties
         </p>
       </div>
@@ -28,16 +28,19 @@
         <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
         <p class="intro-text reveal">for our clients</p>
         <h2 class="reveal">
-          <span>Attractive returns</span> by capitalising unique market
-          opportunities
+          <span>build a legacy</span> with luxury property investments
         </h2>
         <p class="info-text reveal">
-          At Elegance, we primarily focus on value creation through the
-          development of small-scale luxury residential projects and
-          transformative refurbishments tailored for ultra-high-net-worth
-          individuals. Additionally, we enhance stable cash flow by acquiring
-          and managing various properties, ensuring a balanced approach to
-          luxury real estate investment.
+          With Elegance, invest in exceptional luxury living spaces designed and
+          developed to meet the desires of ultra-high-net-worth individuals.
+          From bespoke luxury residences to transformative refurbishments, we
+          bring visions of refined living to life.
+        </p>
+        <p class="info-text reveal">
+          Beyond development, our expertise extends to acquiring and managing
+          premium properties, ensuring your investments flourish with stable,
+          long-term returns. We’re here to elevate your lifestyle and secure
+          your financial future.
         </p>
         <figure>
           <img
@@ -56,7 +59,7 @@
         <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
         <p class="intro-text reveal">for our clients</p>
         <h2 class="reveal">
-          Exclusive access to purchase premier residential projects
+          An exclusive Invitation to Own the Finest Luxury Residences
         </h2>
         <figure class="reveal">
           <img
@@ -66,40 +69,46 @@
         </figure>
         <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
         <h2 v-if="!isTabletView" class="w-500 reveal">
-          why to invest in elegance
+          why invest in elegance?
         </h2>
-        <h1 v-if="isTabletView" class="reveal">why to invest in elegance</h1>
+        <h1 v-if="isTabletView" class="reveal">why invest in elegance?</h1>
         <div class="grid-container">
           <div class="grid-item">
-            <h3 class="reveal">Growing Market</h3>
+            <h3 class="reveal">A thriving Market</h3>
             <p class="reveal">
               The global demand for luxury properties continues to rise, driven
               by high-net-worth individuals (1M+ USD) and ultra-high-net-worth
-              individuals (30M+ USD), as well as international buyers.
+              individuals (30M+ USD), alongside a growing number of discerning
+              international buyers seeking exclusive residences.
             </p>
           </div>
           <div class="grid-item">
-            <h3 class="reveal">Stability</h3>
+            <h3 class="reveal">enduring Stability</h3>
             <p class="reveal">
-              Historically, luxury real estate has shown resilience to market
-              downturns and has offered attractive returns. Prime locations tend
-              to experience steady appreciation in property values.
+              Luxury real estate has consistently proven resilience during
+              market fluctuations, offering attractive returns even during
+              uncertain periods. Properties in prime locations continue to
+              appreciate steadily, making them a reliable cornerstone of wealth
+              preservation and growth.
             </p>
           </div>
           <div class="grid-item">
             <h3 class="reveal">Risk diversification</h3>
             <p class="reveal">
-              Luxury properties have historically demonstrated low correlation
-              with traditional asset classes such as stocks and bonds, making
-              them a valuable addition to investment portfolios.
+              Luxury properties provide diversification advantages within a
+              well-balanced investment portfolio. With their low correlation to
+              traditional asset classes such as stocks and bonds, they help
+              mitigate risk while enhancing the overall strength of your
+              investment strategy.
             </p>
           </div>
           <div class="grid-item">
             <h3 class="reveal">Lifestyle benefits</h3>
             <p class="reveal">
-              Ownership of luxury properties offers lifestyle perks, prestige,
-              and personal enjoyment. Luxury properties can serve as private
-              retreats, vacation homes, or legacy assets for future generations.
+              Luxury property ownership extends far beyond financial returns.
+              Enjoy these exclusive residences as private retreats, elegant
+              vacation homes, and enduring legacy assets, providing peace of
+              mind and lasting value for future generations.
             </p>
           </div>
         </div>
@@ -113,10 +122,12 @@
         <div class="vertical-delimiter reveal"></div>
         <p class="intro-text reveal">our most recent projects </p>
         <h2 class="reveal">
-          unique Properties with <span>prime locations</span>
+          prestigious Properties in <span>prime locations</span>
         </h2>
         <div class="btn-wrapper">
-          <button class="light reveal">see more properties</button>
+          <router-link to="/about#projects">
+            <button class="light reveal">see more properties</button>
+          </router-link>
         </div>
         <portfolio-items></portfolio-items>
       </div>

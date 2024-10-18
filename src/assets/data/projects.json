@@ -1,54 +1,54 @@
 [
   {
     "id": 1,
-    "title": "molo residences",
-    "description": "MOLO signature designer apartments offer the perfect blend of privacy and freedom, mirroring the comfort of your own home. Fully furnished designer flats equipped with kitchen units, appliances, kitchenware, a refrigerator, closets, and seating furniture.",
-    "images": [
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg"
+    "title": "GRAND SEA VILLASin croatia",
+    "description": "Four luxury villas in Croatia, part of the prestigious Kempinski Hotel Adriatic resort in Savudrija, offer panoramic Adriatic Sea views and private pools. Each 1,000-square-meter villa, steps from the beach, has been exquisitely renovated with interiors by top brands like Minotti, Poliform, and Dedon.",
+    "sliderImages": [
+      "project_1/slider_1.jpg",
+      "project_1/slider_2.jpg",
+      "project_1/slider_3.jpg",
+      "project_1/slider_4.jpg",
+      "project_1/slider_5.jpg",
+      "project_1/slider_6.jpg",
+      "project_1/slider_7.jpg"
     ],
-    "video": "portfolio-1.jpg"
+    "image": "project_1/project_1_image.png"
   },
   {
     "id": 2,
-    "title": "molo residences",
-    "description": "MOLO signature designer apartments offer the perfect blend of privacy and freedom, mirroring the comfort of your own home. Fully furnished designer flats equipped with kitchen units, appliances, kitchenware, a refrigerator, closets, and seating furniture.",
-    "images": [
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg"
+    "title": "LUXURY VILLAS IN MALLORCA",
+    "description": "This redevelopment project is transforming three expansive luxury villas in a prestigious, sought-after location. Each villa spans over 1,000 square meters, offering a perfect balance of space and sophistication. Two of the villas are already complete, with the third set for completion in 2027.",
+    "sliderImages": [
+      "project_2/slider_1.jpg",
+      "project_2/slider_2.jpg",
+      "project_2/slider_3.jpg"
     ],
-    "video": "portfolio-2.jpg"
+    "image": "project_2/project_2_image.png"
   },
   {
     "id": 3,
-    "title": "molo residences",
-    "description": "MOLO signature designer apartments offer the perfect blend of privacy and freedom, mirroring the comfort of your own home. Fully furnished designer flats equipped with kitchen units, appliances, kitchenware, a refrigerator, closets, and seating furniture.",
-    "images": [
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg"
+    "title": "MOLO LIPNO RESIDENCE",
+    "description": "Molo Lipno, a luxury destination on Lipno Lake in the Czech Republic, offers 100 lakeside apartments and penthouses with stunning views and easy access to Šumava National Park. The resort features a 120-meter pier, and a 5-star hotel is set to open by 2028. It recently won the \"Best Large-Scale Residential Project\" at the Best of Realty Awards.",
+    "sliderImages": [
+      "project_3/slider_1.jpg",
+      "project_3/slider_2.jpg",
+      "project_3/slider_3.jpg",
+      "project_3/slider_4.jpg",
+      "project_3/slider_5.jpg",
+      "project_3/slider_6.jpg",
+      "project_3/slider_7.jpg",
+      "project_3/slider_8.jpg",
+      "project_3/slider_9.jpg",
+      "project_3/slider_10.jpg",
+      "project_3/slider_11.jpg",
+      "project_3/slider_12.jpg",
+      "project_3/slider_13.jpg",
+      "project_3/slider_14.jpg",
+      "project_3/slider_15.jpg",
+      "project_3/slider_16.jpg",
+      "project_3/slider_17.jpg",
+      "project_3/slider_18.jpg"
     ],
-    "video": "portfolio-3.jpg"
-  },
-  {
-    "id": 4,
-    "title": "molo residences",
-    "description": "MOLO signature designer apartments offer the perfect blend of privacy and freedom, mirroring the comfort of your own home. Fully furnished designer flats equipped with kitchen units, appliances, kitchenware, a refrigerator, closets, and seating furniture.",
-    "images": [
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg",
-      "slider-1.jpg"
-    ],
-    "video": "portfolio-4.jpg"
+    "image": "project_3/project_3_image.png"
   }
 ]

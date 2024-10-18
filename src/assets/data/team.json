@@ -1,16 +1,30 @@
 [
   {
     "id": 1,
-    "title": "Jiří Uhříček",
-    "post": "DEPUTY CHIEF EXECUTIVE OFFICER",
-    "description": "Tomas Porupka is the lead legal counsel for Elegance Fund, bringing over 15 years of experience in real estate law and high-value transactions. Specializing in luxury property development and acquisitions, he ensures projects are legally sound and strategically advantageous. His expertise in regulatory frameworks and negotiation makes him essential to the fund, safeguarding its interests and maintaining its reputation for excellence in luxury real estate investments.",
+    "title": "JAN ČÍŽEK",
+    "post": "Founder",
+    "description": "Jan Čížek began his career in banking, working for KBC and Intesa Bank. From 2001 onwards, he focused on acquiring, managing, and selling real estate projects. After more than twenty years in a real estate business Jan manages portfolio of 150 properties across Europe. In 2015, he founded INVESTIKA, one of the largest non-banking investment firms in the Czech Republic, managing over EUR 1 billion in fund capital and serving more than 95,000 clients.",
     "image": "team-1.png"
   },
   {
     "id": 2,
-    "title": "Jiří Uhříček",
-    "post": "DEPUTY CHIEF EXECUTIVE OFFICER",
-    "description": "Tomas Porupka is the lead legal counsel for Elegance Fund, bringing over 15 years of experience in real estate law and high-value transactions. Specializing in luxury property development and acquisitions, he ensures projects are legally sound and strategically advantageous. His expertise in regulatory frameworks and negotiation makes him essential to the fund, safeguarding its interests and maintaining its reputation for excellence in luxury real estate investments.",
+    "title": "TOMÁŠ PORUPKA",
+    "post": "Director",
+    "description": "Tomáš Porupka brings 25 years of experience in Corporate/M&A and Real Estate across six continents. He worked at major international law firms and prominent investment groups in Prague and Madrid. He was a senior lawyer at the Prague office of Clifford Chance and Arthur Andersen. Tomáš holds a Ph.D. in Czech law, has a background in economics, and studied law in Spain.",
+    "image": "team-2.png"
+  },
+  {
+    "id": 3,
+    "title": "OLIVIER LAMBRECHT",
+    "post": "Fund Manager",
+    "description": "Olivier Lambrecht has held senior finance roles, including as the Regional Financial Controller for Europe in the Real Estate Department of the Abu Dhabi Investment Authority and as a Senior Associate at The Carlyle Group. His career spans over two decades, specializing in real estate, financial management, and leadership roles across various global financial organizations. Olivier holds a degree in Management & Economics from the University of Liège.",
+    "image": "team-1.png"
+  },
+  {
+    "id": 4,
+    "title": "NAIM GJONAJ",
+    "post": "Fund Manager",
+    "description": "Naim has expertise in private equity, real estate, and credit portfolio management. He has served as a board member for holding companies in the investment and asset management industries since 2005. His career includes senior roles, such as Group Finance Director at Lio Factory and a board member within BC Partners, where he was involved in M&A transactions and day-to-day management. Naim holds an MBA in Finance from Sacred Heart University.",
     "image": "team-2.png"
   }
 ]
