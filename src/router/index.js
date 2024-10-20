@@ -28,10 +28,20 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  // history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 };
+    if (to.hash) {
+      return {
+        el: to.hash, // Scrolls to the element with the ID matching the hash
+        behavior: 'smooth', // Optional: smooth scrolling
+      };
+    } else if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 };
+    }
   },
 });
 

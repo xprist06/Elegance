@@ -9,7 +9,7 @@
       </nav>
       <div class="logo">
         <router-link to="/">
-          <img src="@/assets/images/logo-gold.png" alt="Logo" />
+          <img src="@/assets/images/logo-footer.svg" alt="Logo" />
         </router-link>
       </div>
     </div>
@@ -56,6 +56,12 @@ p {
 .content-top {
   flex-direction: column-reverse;
   gap: 55px;
+
+  .logo {
+    img {
+      width: 200px;
+    }
+  }
 }
 
 .nav-left {

@@ -162,13 +162,13 @@ export default {
     window.addEventListener('resize', this.checkTabletView);
     window.addEventListener('resize', this.setTopValue);
 
-    ScrollReveal().reveal('.reveal', {
-      distance: '50px', // Distance the element moves
-      duration: 800, // Duration of animation
-      easing: 'ease-in-out', // Type of easing
-      origin: 'bottom', // Where the animation starts (top, right, bottom, left)
-      interval: 100, // Delay between animations
-    });
+    // ScrollReveal().reveal('.reveal', {
+    //   distance: '50px', // Distance the element moves
+    //   duration: 800, // Duration of animation
+    //   easing: 'ease-in-out', // Type of easing
+    //   origin: 'bottom', // Where the animation starts (top, right, bottom, left)
+    //   interval: 100, // Delay between animations
+    // });
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);
@@ -178,6 +178,9 @@ export default {
   methods: {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 650;
+      this.$nextTick(() => {
+        this.reinitializeScrollReveal();
+      });
     },
 
     checkTabletView() {
@@ -187,6 +190,16 @@ export default {
     setTopValue() {
       const width = this.$refs.archImage.clientWidth;
       this.topValue = `-${width / 30}px`;
+    },
+
+    reinitializeScrollReveal() {
+      ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 800,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+        interval: 100,
+      });
     },
   },
 };

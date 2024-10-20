@@ -12,8 +12,8 @@
           <img
             :src="
               isMobileView
-                ? require('@/assets/images/logo-header-mobile.png')
-                : require('@/assets/images/logo.png')
+                ? require('@/assets/images/logo-header-mobile.svg')
+                : require('@/assets/images/logo-header.svg')
             "
             alt="Logo"
             @click="closeMenu"
@@ -106,6 +106,10 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -40%);
+
+  img {
+    width: 100%;
+  }
 }
 
 .mobile-navbar {
@@ -143,7 +147,7 @@ a {
       justify-content: center;
 
       img {
-        width: 75%;
+        width: 200px;
       }
     }
   }

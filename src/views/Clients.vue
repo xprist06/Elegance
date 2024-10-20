@@ -12,7 +12,7 @@
       </div>
       <div class="right-side">
         <figure>
-          <img src="@/assets/images/logo-without-text.png" alt="Logo" />
+          <!-- <img src="@/assets/images/logo-without-text.png" alt="Logo" /> -->
         </figure>
         <h3>SIGN IN</h3>
         <form @submit.prevent="handleSubmit">

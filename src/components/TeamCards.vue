@@ -66,14 +66,11 @@ export default {
 @import '@/assets/scss/variables';
 
 .cards-wrapper {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // gap: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
 
   .card {
     // display: flex;
@@ -85,7 +82,6 @@ export default {
     display: flex;
     flex-direction: column;
     height: 100%;
-    max-width: 90%;
     border: 1px solid $color-brown;
     padding: 2rem;
 
@@ -95,17 +91,28 @@ export default {
   }
 }
 
+@media screen and (min-width: 662px) {
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .card {
+      max-width: 100%;
+    }
+  }
+}
+
 @media screen and (min-width: 992px) {
   .cards-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 90%;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    // width: 90%;
     padding-top: 4rem;
 
     .card {
-      // max-width: 440px;
-      max-width: 330px;
+      max-width: 440px;
+      // max-width: 330px;
       gap: 1rem;
 
       h2,
@@ -121,4 +128,10 @@ export default {
 //     width: 100%;
 //   }
 // }
+
+@media screen and (min-width: 1400px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 </style>
