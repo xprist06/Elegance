@@ -1,20 +1,24 @@
 <template>
   <div id="home" class="content-wrapper">
     <section id="title">
-      <figure>
-        <img
-          src="@/assets/images/homepage-title.jpg"
-          alt="Homepage title image"
-        />
-      </figure>
-      <div class="text-content">
-        <h1 v-if="!isMobileView" class="reveal">Invest in Elegance</h1>
-        <h2 v-if="isMobileView" class="reveal header-xl">Invest in Elegance</h2>
-        <p class="reveal">
-          Dedicated to Developing, Acquiring, and Managinga Diversified
-          Portfolio of Luxury Properties
-        </p>
-      </div>
+      <v-parallax :src="require('@/assets/images/homepage-title.jpg')">
+        <!-- <figure>
+          <img
+            src="@/assets/images/homepage-title.jpg"
+            alt="Homepage title image"
+          />
+        </figure> -->
+        <div class="text-content">
+          <h1 v-if="!isMobileView" class="reveal">Invest in Elegance</h1>
+          <h2 v-if="isMobileView" class="reveal header-xl">
+            Invest in Elegance
+          </h2>
+          <p class="reveal">
+            Dedicated to Developing, Acquiring, and Managinga Diversified
+            Portfolio of Luxury Properties
+          </p>
+        </div>
+      </v-parallax>
     </section>
     <section id="for-clients">
       <figure class="arch golden" :style="{ '--top-value': topValue }">
@@ -158,6 +162,10 @@ export default {
     this.checkMobileView();
     this.checkTabletView();
 
+    this.$nextTick(() => {
+      this.reinitializeScrollReveal();
+    });
+
     window.addEventListener('resize', this.checkMobileView);
     window.addEventListener('resize', this.checkTabletView);
     window.addEventListener('resize', this.setTopValue);
@@ -178,9 +186,6 @@ export default {
   methods: {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 650;
-      this.$nextTick(() => {
-        this.reinitializeScrollReveal();
-      });
     },
 
     checkTabletView() {
@@ -193,6 +198,7 @@ export default {
     },
 
     reinitializeScrollReveal() {
+      ScrollReveal().clean('.reveal');
       ScrollReveal().reveal('.reveal', {
         distance: '50px',
         duration: 800,

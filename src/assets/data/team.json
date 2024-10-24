@@ -1,30 +1,30 @@
 [
   {
     "id": 1,
-    "title": "JAN ČÍŽEK",
+    "title": "JAN\nČÍŽEK",
     "post": "Founder",
-    "description": "Jan Čížek began his career in banking, working for KBC and Intesa Bank. From 2001 onwards, he focused on acquiring, managing, and selling real estate projects. After more than twenty years in a real estate business Jan manages portfolio of 150 properties across Europe. In 2015, he founded INVESTIKA, one of the largest non-banking investment firms in the Czech Republic, managing over EUR 1 billion in fund capital and serving more than 95,000 clients.",
+    "description": "Our founder, Jan Čížek, began his career in banking, holding key roles at KBC and Intesa Bank.\n\nSince 2001, Jan has dedicated his expertise to acquiring, managing, and selling real estate projects. With over two decades of experience, today Jan manages a portfolio of 150 properties across Europe.\n\nIn 2015, Jan founded INVESTIKA, one of the Czech Republic's largest non-banking investment firms. Under his leadership, INVESTIKA manages over EUR 1 billion in fund capital, serving over 95,000 clients.",
     "image": "team-1.png"
   },
   {
     "id": 2,
-    "title": "TOMÁŠ PORUPKA",
+    "title": "TOMÁŠ\nPORUPKA",
     "post": "Director",
-    "description": "Tomáš Porupka brings 25 years of experience in Corporate/M&A and Real Estate across six continents. He worked at major international law firms and prominent investment groups in Prague and Madrid. He was a senior lawyer at the Prague office of Clifford Chance and Arthur Andersen. Tomáš holds a Ph.D. in Czech law, has a background in economics, and studied law in Spain.",
+    "description": "Tomáš Porupka is our director, bringing 25 years of experience in Corporate/M&A and Real Estate across six continents.\n\nHis career includes roles at leading international law firms and prominent investment groups in both Prague and Madrid. As a senior lawyer, Tomáš has held key positions at the Prague offices of Clifford Chance and Arthur Andersen.\n\nTomáš holds a Ph.D. in Czech law, complemented by a background in economics, and has also studied law in Spain.",
     "image": "team-2.png"
   },
   {
     "id": 3,
-    "title": "OLIVIER LAMBRECHT",
+    "title": "OLIVIER\nLAMBRECHT",
     "post": "Fund Manager",
-    "description": "Olivier Lambrecht has held senior finance roles, including as the Regional Financial Controller for Europe in the Real Estate Department of the Abu Dhabi Investment Authority and as a Senior Associate at The Carlyle Group. His career spans over two decades, specializing in real estate, financial management, and leadership roles across various global financial organizations. Olivier holds a degree in Management & Economics from the University of Liège.",
+    "description": "Olivier Lambrecht has held senior finance roles, including as the Regional Financial Controller for Europe in the Real Estate Department of the Abu Dhabi Investment Authority and as a Senior Associate at The Carlyle Group.\n\nHis career spans over two decades, specializing in real estate and financial management. Olivier has also held leadership roles across prominent global financial institutions.\n\nOlivier holds a degree in Management & Economics from the University of Liège in Belgium.",
     "image": "team-1.png"
   },
   {
     "id": 4,
-    "title": "NAIM GJONAJ",
+    "title": "NAIM\nGJONAJ",
     "post": "Fund Manager",
-    "description": "Naim has expertise in private equity, real estate, and credit portfolio management. He has served as a board member for holding companies in the investment and asset management industries since 2005. His career includes senior roles, such as Group Finance Director at Lio Factory and a board member within BC Partners, where he was involved in M&A transactions and day-to-day management. Naim holds an MBA in Finance from Sacred Heart University.",
+    "description": "Naim brings extensive expertise in private equity, real estate, and credit portfolio management. Since 2005, he has served as a board member for holding companies in the investment and asset management industries.\n\nHis career highlights include senior roles such as Group Finance Director at Lio Factory and board member at BC Partners, where he was instrumental in M&A transactions and daily operations management. Naim holds an MBA in Finance from Sacred Heart University in Connecticut.",
     "image": "team-2.png"
   }
 ]

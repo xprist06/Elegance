@@ -78,7 +78,7 @@ export default {
 .row-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 8rem;
   width: 90%;
   padding-top: 1rem;
 
@@ -86,13 +86,25 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
+
+    .carousel__pagination {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 }
 
 @media screen and (min-width: 992px) {
   .row-wrapper {
     padding-top: 3rem;
+
+    .row {
+      gap: 4rem;
+
+      .carousel__pagination {
+        margin-top: 0.8rem;
+      }
+    }
   }
 }
 

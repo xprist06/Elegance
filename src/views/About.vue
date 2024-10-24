@@ -1,15 +1,17 @@
 <template>
   <div id="about" class="content-wrapper">
     <section id="title">
-      <figure>
-        <img src="@/assets/images/about-title.jpg" alt="About title image" />
-        <div class="filter"></div>
-      </figure>
-      <div class="text-content">
-        <h2 :class="{ 'header-xl': isMobileView, reveal: true }">
-          investing in luxury real estates
-        </h2>
-      </div>
+      <v-parallax :src="require('@/assets/images/about-title.jpg')">
+        <figure>
+          <!-- <img src="@/assets/images/about-title.jpg" alt="About title image" /> -->
+          <div class="filter"></div>
+        </figure>
+        <div class="text-content">
+          <h2 :class="{ 'header-xl': isMobileView, reveal: true }">
+            investing in luxury real estates
+          </h2>
+        </div>
+      </v-parallax>
     </section>
     <section id="about-us">
       <figure class="arch golden" :style="{ '--top-value': topValue }">
@@ -156,6 +158,10 @@ export default {
   mounted() {
     this.checkMobileView();
 
+    this.$nextTick(() => {
+      this.reinitializeScrollReveal();
+    });
+
     window.addEventListener('resize', this.checkMobileView);
     window.addEventListener('resize', this.setTopValue);
   },
@@ -166,9 +172,6 @@ export default {
   methods: {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 992;
-      this.$nextTick(() => {
-        this.reinitializeScrollReveal();
-      });
     },
 
     setTopValue() {
@@ -177,6 +180,7 @@ export default {
     },
 
     reinitializeScrollReveal() {
+      ScrollReveal().clean('.reveal');
       ScrollReveal().reveal('.reveal', {
         distance: '50px',
         duration: 800,

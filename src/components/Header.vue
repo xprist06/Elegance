@@ -106,6 +106,8 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -40%);
+  width: 70%;
+  max-width: 430px;
 
   img {
     width: 100%;
@@ -141,6 +143,7 @@ a {
 
   .logo {
     transform: translate(-50%, -50%);
+    width: initial;
 
     a {
       display: flex;

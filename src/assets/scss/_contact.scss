@@ -36,13 +36,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
+      gap: 2.5rem;
       transform: translate(-50%, -50%);
 
-      p {
+      p a {
         font-family: $font-family-heading;
         color: $text-color-light;
         text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -61,6 +66,10 @@
       text-align: left;
       padding: 0 20px 2rem;
     }
+
+    button {
+      width: calc(100% - 40px);
+    }
   }
 }
 
@@ -76,6 +85,10 @@
 
 @media screen and (min-width: 1200px) {
   #contact {
+    .filter {
+      display: none;
+    }
+
     .contact-form {
       position: relative;
       width: 50%;
@@ -87,6 +100,11 @@
       left: 0;
       width: 100%;
       height: 100%;
+
+      .content {
+        padding: 8rem 7rem;
+        background-color: $color-brown;
+      }
     }
 
     .right-side {

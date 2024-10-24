@@ -52,13 +52,17 @@ textarea {
 
 button {
   text-transform: uppercase;
-  width: calc(100% - 40px);
-  padding: 1.5rem 0;
+  width: 100%;
+  padding: 1.5rem 20px;
   margin-top: 2rem;
   border: 1px solid $color-brown;
   cursor: pointer;
   font-weight: $font-weight-medium;
   transition: all 0.5s ease;
+
+  &:hover {
+    scale: 0.95;
+  }
 
   &.light {
     color: $text-color-brown;

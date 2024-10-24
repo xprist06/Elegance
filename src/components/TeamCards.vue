@@ -17,9 +17,9 @@
       <p v-if="isMobileView">{{ item.description }}</p>
     </div> -->
     <div v-for="item in items" :key="item.id" class="card reveal">
-      <h2>{{ item.title }}</h2>
+      <h2 v-html="item.title.replace(/\n/g, '<br>')"></h2>
       <p class="intro-text">{{ item.post }}</p>
-      <p>{{ item.description }}</p>
+      <p v-html="item.description.replace(/\n/g, '<br>')"></p>
     </div>
   </div>
 </template>

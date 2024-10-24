@@ -2,15 +2,24 @@
   <div id="contact" class="content-wrapper">
     <div class="contact-form">
       <div class="left-side">
-        <figure>
-          <img src="@/assets/images/contact.jpg" alt="" />
-          <div class="filter"></div>
-        </figure>
-        <div class="content">
-          <p>info@elegance.lu</p>
-          <p>+352 987 878 987</p>
-          <p>26 Boulevard Royal<br />L-2449 Luxembourg</p>
-        </div>
+        <v-parallax :src="require('@/assets/images/contact.jpg')">
+          <figure>
+            <!-- <img src="@/assets/images/contact.jpg" alt="" /> -->
+            <div class="filter"></div>
+          </figure>
+          <div class="content">
+            <p><a href="mailto:info@elegance.lu">info@elegance.lu</a></p>
+            <p><a href="tel:+352987878987">+352 987 878 987</a></p>
+            <p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=26+Boulevard+Royal,+L-2449+Luxembourg"
+                target="_blank"
+              >
+                26 Boulevard Royal<br />L-2449 Luxembourg
+              </a>
+            </p>
+          </div>
+        </v-parallax>
       </div>
       <div class="right-side">
         <figure class="arch golden" :style="{ '--top-value': topValue }">
