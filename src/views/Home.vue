@@ -1,6 +1,6 @@
 <template>
+  <elegance-loading @animationFinished="onLoadingFinished" />
   <div id="home" class="content-wrapper">
-    <!-- <elegance-loading /> -->
     <section id="title">
       <v-parallax :src="require('@/assets/images/homepage-title.jpg')">
         <!-- <figure>
@@ -182,13 +182,14 @@ export default {
   name: 'HomePage',
   components: {
     PortfolioItems,
-    // EleganceLoading,
+    EleganceLoading,
   },
   data() {
     return {
       isMobileView: false,
       isTabletView: false,
       topValue: '0px',
+      isLoading: true,
     };
   },
   mounted() {
@@ -202,14 +203,6 @@ export default {
     window.addEventListener('resize', this.checkMobileView);
     window.addEventListener('resize', this.checkTabletView);
     window.addEventListener('resize', this.setTopValue);
-
-    // ScrollReveal().reveal('.reveal', {
-    //   distance: '50px', // Distance the element moves
-    //   duration: 800, // Duration of animation
-    //   easing: 'ease-in-out', // Type of easing
-    //   origin: 'bottom', // Where the animation starts (top, right, bottom, left)
-    //   interval: 100, // Delay between animations
-    // });
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);
@@ -217,6 +210,9 @@ export default {
     window.removeEventListener('resize', this.setTopValue);
   },
   methods: {
+    onLoadingFinished() {
+      this.isLoading = false;
+    },
     checkMobileView() {
       this.isMobileView = window.innerWidth < 650;
     },
@@ -226,7 +222,7 @@ export default {
     },
 
     setTopValue() {
-      const width = this.$refs.archImage.clientWidth;
+      const width = this.$refs.archImage?.clientWidth || 0;
       this.topValue = `-${width / 30}px`;
     },
 

@@ -1,7 +1,15 @@
 <template>
   <transition name="fade-out" @after-leave="handleAfterLeave">
-    <div v-if="isVisible" class="loader-overlay">
-      <div ref="lottieContainer" class="lottie-animation"></div>
+    <div
+      v-if="isVisible"
+      class="loader-overlay"
+      :class="{ 'fade-out': overlayFadedOut }"
+    >
+      <div
+        ref="lottieContainer"
+        class="lottie-animation"
+        :class="{ 'scroll-to-top': svgScrolledUp }"
+      ></div>
     </div>
   </transition>
 </template>
@@ -14,11 +22,12 @@ export default {
   name: 'EleganceLoading',
   data() {
     return {
-      isVisible: true, // Controls visibility of the loader
+      isVisible: true,
+      svgScrolledUp: false,
+      overlayFadedOut: false,
     };
   },
   mounted() {
-    // Load Lottie animation using a fixed path to the JSON file
     this.lottieInstance = lottie.loadAnimation({
       container: this.$refs.lottieContainer,
       animationData,
@@ -30,7 +39,6 @@ export default {
       },
     });
 
-    // Listen for animation complete event
     this.lottieInstance.addEventListener('complete', () => {
       this.onAnimationComplete();
     });
@@ -42,43 +50,63 @@ export default {
   },
   methods: {
     onAnimationComplete() {
-      // Trigger fade-out effect after the animation completes
-      this.isVisible = false;
+      this.svgScrolledUp = true;
+      this.overlayFadedOut = true;
+      setTimeout(() => {
+        this.isVisible = false;
+      }, 500);
     },
     handleAfterLeave() {
-      // Clean up or emit an event when the loader has fully disappeared
       this.$emit('animationFinished');
     },
   },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '@/assets/scss/functions';
+@import '@/assets/scss/colors';
+
 .loader-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
   display: flex;
+  top: 0;
   align-items: center;
   justify-content: center;
+  background: $color-dark;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
+  transition: all 0.5s ease-out;
+
+  &.fade-out {
+    opacity: 0;
+  }
 }
 
 .lottie-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
+  transition: all 1s ease-out;
+
+  &.scroll-to-top {
+    transform: translateY(-100px);
+  }
 }
 
-.fade-out-enter-active,
-.fade-out-leave-active {
-  transition: opacity 0.5s ease-out; /* Adjust the duration as needed */
-}
+// .fade-out-enter-active,
+// .fade-out-leave-active {
+//   transition: all 0.5s ease-out;
+// }
 
-.fade-out-enter,
-.fade-out-leave-to {
-  opacity: 0;
-}
+// .fade-out-enter,
+// .fade-out-leave-to {
+//   opacity: 0;
+//   svg {
+//     transform: translateY(-250px);
+//   }
+// }
 </style>
