@@ -69,8 +69,8 @@
           <div class="form-group checkbox">
             <label>
               <input type="checkbox" v-model="formData.agree" required />
-              *I agree that by submitting this form, I accept your website terms
-              of use, privacy notice and cookie policy.
+              *I agree that by submitting this form, I accept your website's
+              terms of use, privacy notice, and cookie policy.
             </label>
           </div>
 

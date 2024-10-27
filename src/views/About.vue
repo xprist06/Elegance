@@ -7,8 +7,9 @@
           <div class="filter"></div>
         </figure>
         <div class="text-content">
-          <h2 :class="{ 'header-xl': isMobileView, reveal: true }">
-            investing in luxury real estates
+          <h2 :class="{ 'header-xl': isMobileView }">
+            <div class="reveal">investing in luxury</div>
+            <div class="reveal">real estates</div>
           </h2>
         </div>
       </v-parallax>
@@ -55,16 +56,24 @@
           <div class="company-wrapper">
             <p class="intro-text reveal">elegance</p>
             <div class="content-wrapper">
-              <h2 class="reveal">sustainable growth and attractive returns</h2>
+              <h2 v-if="!isMobileView">
+                <div class="reveal">sustainable growth and</div>
+                <div class="reveal">attractive returns</div>
+              </h2>
+              <h2 v-if="isMobileView">
+                <div class="reveal">sustainable</div>
+                <div class="reveal">growth and</div>
+                <div class="reveal">attractive returns</div>
+              </h2>
               <p class="info-text reveal">
                 We are dedicated to curating and managing a diverse portfolio of
                 luxury properties to elevate your investment. Specializing in
                 small-scale luxury residential projects, transformative
                 refurbishments for ultra-high-net-worth individuals, and
-                exclusive hospitality and mixed-use properties, we provide you
-                with access to some of Europe’s most coveted locations. Each
-                property is chosen for its sublime views, impressive amenities,
-                and superior infrastructure, offering a luxurious lifestyle with
+                exclusive hospitality and mixed-use properties, we provide
+                access to some of Europe’s most coveted locations. Each property
+                is selected for its sublime views, impressive amenities, and
+                superior infrastructure, offering buyer’s luxurious living with
                 long-term value.
               </p>
             </div>
@@ -73,16 +82,21 @@
         <div id="our-job">
           <div class="vertical-delimiter reveal"></div>
           <p class="intro-text reveal">what we do</p>
-          <h2 class="reveal">
-            <span>develop, acquireand manage</span> luxury property portfolios
+          <h2 v-if="!isMobileView">
+            <div class="reveal"><span>developing, acquiring</span></div>
+            <div class="reveal"><span>and managing</span></div>
+            <div class="reveal">luxury property portfolios</div>
+          </h2>
+          <h2 v-if="isMobileView">
+            <div class="reveal"><span>developing, acquiring</span></div>
+            <div class="reveal"><span>and managing</span></div>
+            <div class="reveal">luxury property</div>
+            <div class="reveal">portfolios</div>
           </h2>
           <div class="card-wrapper">
             <div class="card reveal">
               <figure>
-                <img
-                  src="@/assets/images/about-company.jpg"
-                  alt="About our company"
-                />
+                <img src="@/assets/images/card-1.jpg" alt="About our company" />
               </figure>
               <p class="intro-text">OUR main focus</p>
               <h2>Value Creation</h2>
@@ -93,10 +107,7 @@
             </div>
             <div class="card reveal">
               <figure>
-                <img
-                  src="@/assets/images/about-company.jpg"
-                  alt="About our company"
-                />
+                <img src="@/assets/images/card-2.jpg" alt="About our company" />
               </figure>
               <p class="intro-text">add-ons</p>
               <h2>Stable Cash-flow</h2>
@@ -182,11 +193,12 @@ export default {
     reinitializeScrollReveal() {
       ScrollReveal().clean('.reveal');
       ScrollReveal().reveal('.reveal', {
-        distance: '50px',
+        distance: this.isMobileView ? '50px' : '100px',
         duration: 800,
         easing: 'ease-in-out',
         origin: 'bottom',
-        interval: 100,
+        interval: 250,
+        scale: 0.95,
       });
     },
   },

@@ -36,8 +36,8 @@ const router = createRouter({
         el: to.hash, // Scrolls to the element with the ID matching the hash
         behavior: 'smooth', // Optional: smooth scrolling
       };
-    } else if (savedPosition) {
-      return savedPosition;
+      // } else if (savedPosition) {
+      //   return savedPosition;
     } else {
       return { top: 0 };
     }

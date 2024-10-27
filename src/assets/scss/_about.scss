@@ -16,6 +16,14 @@
     }
   }
 
+  .container {
+    figure {
+      img {
+        aspect-ratio: 1.5/1;
+      }
+    }
+  }
+
   p {
     text-align: left;
   }
@@ -68,6 +76,7 @@
 
       h1,
       h2,
+      div,
       p {
         color: $text-color-light;
         text-align: center;
@@ -187,12 +196,18 @@
     }
 
     h2 {
-      color: $text-color-brown;
+      color: $text-color-golden;
       max-width: 820px;
     }
 
+    p {
+      &.intro-text {
+        color: $text-color-golden;
+      }
+    }
+
     .vertical-delimiter {
-      background-color: $color-brown;
+      background-color: $text-color-golden;
     }
 
     .image-content-wrapper {
@@ -242,14 +257,14 @@
             transform: translate(-50%, -50%);
             content: '';
             display: flex;
-            background-color: $color-brown;
+            background-color: $text-color-golden;
             width: 5px;
             height: 5px;
             border-radius: 50%;
           }
 
           &.carousel__pagination-button--active {
-            border: 1px solid $color-brown;
+            border: 1px solid $text-color-golden;
             border-radius: 50%;
           }
         }
@@ -356,6 +371,10 @@
         h2 {
           font-size: $font-size-xxl;
           width: 80%;
+
+          div {
+            font-size: $font-size-xxl;
+          }
         }
 
         .content-wrapper {
@@ -386,6 +405,14 @@
 
             h2 {
               font-size: $font-size-xxl;
+
+              div {
+                font-size: $font-size-xxl;
+              }
+            }
+
+            p {
+              max-width: 440px;
             }
           }
         }

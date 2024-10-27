@@ -1,5 +1,6 @@
 <template>
   <div id="home" class="content-wrapper">
+    <!-- <elegance-loading /> -->
     <section id="title">
       <v-parallax :src="require('@/assets/images/homepage-title.jpg')">
         <!-- <figure>
@@ -9,13 +10,17 @@
           />
         </figure> -->
         <div class="text-content">
-          <h1 v-if="!isMobileView" class="reveal">Invest in Elegance</h1>
-          <h2 v-if="isMobileView" class="reveal header-xl">
-            Invest in Elegance
+          <h1 v-if="!isMobileView">
+            <div class="reveal">Invest in</div>
+            <div class="reveal">Elegance</div>
+          </h1>
+          <h2 v-if="isMobileView" class="header-xl">
+            <div class="reveal">Invest in</div>
+            <div class="reveal">Elegance</div>
           </h2>
           <p class="reveal">
-            Dedicated to Developing, Acquiring, and Managinga Diversified
-            Portfolio of Luxury Properties
+            Developing, acquiring, and managing luxury properties to enhance
+            your wealth
           </p>
         </div>
       </v-parallax>
@@ -30,21 +35,27 @@
       </figure>
       <div class="container">
         <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
-        <p class="intro-text reveal">for our clients</p>
-        <h2 class="reveal">
-          <span>build a legacy</span> with luxury property investments
+        <p class="intro-text reveal">exceptional real estate opportunities</p>
+        <h2 v-if="!isTabletView">
+          <div class="reveal"><span>build a legacy</span> with luxury</div>
+          <div class="reveal">property investments</div>
+        </h2>
+        <h2 v-if="isTabletView" class="reveal">
+          <div class="reveal"><span>build a legacy</span></div>
+          <div class="reveal">with luxury</div>
+          <div class="reveal">property investments</div>
         </h2>
         <p class="info-text reveal">
           With Elegance, invest in exceptional luxury living spaces designed and
           developed to meet the desires of ultra-high-net-worth individuals.
-          From bespoke luxury residences to transformative refurbishments, we
-          bring visions of refined living to life.
+          From grand, bespoke residences to refined refurbishments, we bring
+          visions of exquisite living to life.
         </p>
         <p class="info-text reveal">
           Beyond development, our expertise extends to acquiring and managing
           premium properties, ensuring your investments flourish with stable,
-          long-term returns. We’re here to elevate your lifestyle and secure
-          your financial future.
+          long-term returns. We’re here to enrich your lifestyle and secure your
+          financial future.
         </p>
         <figure>
           <img
@@ -61,9 +72,17 @@
     <section id="investment">
       <div class="container">
         <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
-        <p class="intro-text reveal">for our clients</p>
-        <h2 class="reveal">
-          An exclusive Invitation to Own the Finest Luxury Residences
+        <p class="intro-text reveal">Premier Properties with Enduring Value</p>
+        <h2 v-if="!isTabletView">
+          <div class="reveal">An exclusive Invitation to</div>
+          <div class="reveal">Own the Finest Luxury</div>
+          <div class="reveal">Residences</div>
+        </h2>
+        <h2 v-if="isTabletView">
+          <div class="reveal">An exclusive</div>
+          <div class="reveal">Invitation to Own</div>
+          <div class="reveal">the Finest Luxury</div>
+          <div class="reveal">Residences</div>
         </h2>
         <figure class="reveal">
           <img
@@ -72,18 +91,24 @@
           />
         </figure>
         <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
-        <h2 v-if="!isTabletView" class="w-500 reveal">
-          why invest in elegance?
+        <h2 v-if="!isTabletView" class="w-500">
+          <div class="reveal">why invest</div>
+          <div class="reveal">in elegance?</div>
         </h2>
-        <h1 v-if="isTabletView" class="reveal">why invest in elegance?</h1>
+        <h1 v-if="isTabletView" class="reveal">
+          <div class="reveal">why</div>
+          <div class="reveal">invest in</div>
+          <div class="reveal">elegance?</div>
+        </h1>
         <div class="grid-container">
           <div class="grid-item">
             <h3 class="reveal">A thriving Market</h3>
             <p class="reveal">
-              The global demand for luxury properties continues to rise, driven
-              by high-net-worth individuals (1M+ USD) and ultra-high-net-worth
-              individuals (30M+ USD), alongside a growing number of discerning
-              international buyers seeking exclusive residences.
+              The global demand for luxury properties continues to rise, fueled
+              by high-net-worth (1M+ USD) and ultra-high-net-worth individuals
+              (30M+ USD). Additionally, a growing number of discerning
+              international buyers are seeking exclusive residences, further
+              driving demand.
             </p>
           </div>
           <div class="grid-item">
@@ -102,17 +127,17 @@
               Luxury properties provide diversification advantages within a
               well-balanced investment portfolio. With their low correlation to
               traditional asset classes such as stocks and bonds, they help
-              mitigate risk while enhancing the overall strength of your
+              reduce risk while enhancing the overall strength of your
               investment strategy.
             </p>
           </div>
           <div class="grid-item">
             <h3 class="reveal">Lifestyle benefits</h3>
             <p class="reveal">
-              Luxury property ownership extends far beyond financial returns.
-              Enjoy these exclusive residences as private retreats, elegant
-              vacation homes, and enduring legacy assets, providing peace of
-              mind and lasting value for future generations.
+              The benefits of luxury property ownership extend far beyond
+              financial returns. Enjoy these exclusive residences as private
+              retreats, elegant vacation homes, and enduring legacy assets,
+              providing peace of mind and lasting value for future generations.
             </p>
           </div>
         </div>
@@ -125,8 +150,14 @@
       <div class="container">
         <div class="vertical-delimiter reveal"></div>
         <p class="intro-text reveal">our most recent projects </p>
-        <h2 class="reveal">
-          prestigious Properties in <span>prime locations</span>
+        <h2 v-if="!isTabletView">
+          <div class="reveal">prestigious Properties in</div>
+          <div class="reveal"><span>prime locations</span></div>
+        </h2>
+        <h2 v-if="isTabletView" class="reveal">
+          <div class="reveal">prestigious</div>
+          <div class="reveal">Properties in</div>
+          <div class="reveal"><span>prime locations</span></div>
         </h2>
         <div class="btn-wrapper">
           <router-link to="/about#projects">
@@ -145,11 +176,13 @@
 <script>
 import ScrollReveal from 'scrollreveal';
 import PortfolioItems from '../components/Portfolio.vue';
+import EleganceLoading from '@/components/Loading.vue';
 
 export default {
   name: 'HomePage',
   components: {
     PortfolioItems,
+    // EleganceLoading,
   },
   data() {
     return {
@@ -200,11 +233,12 @@ export default {
     reinitializeScrollReveal() {
       ScrollReveal().clean('.reveal');
       ScrollReveal().reveal('.reveal', {
-        distance: '50px',
+        distance: this.isTabletView ? '50px' : '100px',
         duration: 800,
         easing: 'ease-in-out',
         origin: 'bottom',
-        interval: 100,
+        interval: 250,
+        scale: 0.95,
       });
     },
   },

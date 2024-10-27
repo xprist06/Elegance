@@ -44,6 +44,7 @@
         color: $text-color-light;
         text-transform: uppercase;
         text-decoration: none;
+        white-space: nowrap;
 
         &:hover {
           text-decoration: underline;
@@ -102,7 +103,7 @@
       height: 100%;
 
       .content {
-        padding: 8rem 7rem;
+        padding: 6rem 7rem;
         background-color: $color-brown;
       }
     }

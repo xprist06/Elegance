@@ -14,6 +14,7 @@
     text-transform: uppercase;
     font-weight: $font-weight-normal;
 
+    div,
     span {
       font-size: $font-size;
       font-family: $font-family-heading;
@@ -49,6 +50,7 @@ a {
     #{$header} {
       font-size: $font-size;
 
+      div,
       span {
         font-size: $font-size;
       }
@@ -58,6 +60,11 @@ a {
   @each $header, $line-height in $line-height-headers {
     #{$header} {
       line-height: $line-height;
+
+      div,
+      span {
+        line-height: $line-height;
+      }
     }
   }
 }

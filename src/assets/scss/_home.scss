@@ -16,6 +16,14 @@
     }
   }
 
+  .container {
+    figure {
+      img {
+        aspect-ratio: 1.5/1;
+      }
+    }
+  }
+
   p {
     text-align: left;
   }
@@ -72,6 +80,8 @@
       p {
         font-size: $font-size-base;
         text-transform: uppercase;
+        max-width: 320px;
+        text-wrap-style: balance;
       }
     }
   }
@@ -105,6 +115,7 @@
     h1,
     h2,
     h3,
+    div,
     p {
       color: $text-color-golden;
     }
@@ -116,7 +127,9 @@
 
     p {
       &.intro-text {
-        color: $text-color-light;
+        color: $text-color-brown;
+        text-align: center;
+        max-width: 320px;
       }
     }
 
@@ -243,7 +256,7 @@
       }
 
       .vertical-delimiter {
-        background-color: $color-brown;
+        background-color: $text-color-golden;
       }
 
       .grid-container {
@@ -298,6 +311,10 @@
     #title {
       .text-content {
         top: 47%;
+
+        p {
+          max-width: 640px;
+        }
       }
     }
 
