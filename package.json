@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "lottie-vue": "^1.0.3",
     "scrollreveal": "^4.0.9",
+    "video.js": "^7.21.6",
     "vidstack": "^1.12.11",
     "vue": "^3.2.13",
     "vue-flux": "^6.0.4",

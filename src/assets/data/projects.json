@@ -13,6 +13,7 @@
       "project_1/7.jpg",
       "project_1/8.jpg"
     ],
+    "video": "project_1/video.mp4",
     "image": "project_1/project_1_image.png"
   },
   {
@@ -45,6 +46,7 @@
       "project_3/7.jpg",
       "project_3/8.jpg"
     ],
+    "video": "project_3/video.mp4",
     "image": "project_3/project_3_image.png"
   }
 ]

@@ -6,20 +6,16 @@
       :class="{ row: true, 'row-reverse': index % 2 === 1 }"
     >
       <figure>
-        <!-- <video-player
+        <video
           v-if="item.video"
-          class="video-player"
-          ref="videoPlayer"
-          :options="getVideoOptions(item.video)"
-          :playsinline="true"
-        ></video-player>
-
+          :ref="`video_${index}`"
+          :src="require(`@/assets/images/${item.video}`)"
+          muted
+          playsinline
+          loop
+        ></video>
         <img
           v-else
-          :src="require(`@/assets/images/${item.image}`)"
-          :alt="item.title"
-        /> -->
-        <img
           class="reveal"
           :src="require(`@/assets/images/${item.image}`)"
           :alt="item.title"
@@ -34,8 +30,6 @@
 </template>
 
 <script>
-// import 'video.js/dist/video-js.css';
-// import { VideoPlayer } from '@videojs-player/vue';
 import ScrollReveal from 'scrollreveal';
 import data from '@/assets/data/portfolio.json';
 
@@ -45,34 +39,19 @@ export default {
     return {
       isMobileView: false,
       items: data,
+      videoObservers: [],
     };
   },
   mounted() {
     this.checkMobileView();
     this.$nextTick(() => {
       this.reinitializeScrollReveal();
+      this.initializeVideoAutoplay();
     });
   },
-  // beforeUnmount() {
-  //   if (this.$refs.videoPlayer) {
-  //     this.$refs.videoPlayer.dispose();
-  //   }
-  // },
-  // methods: {
-  //   getVideoOptions(videoSrc) {
-  //     return {
-  //       controls: true,
-  //       autoplay: false,
-  //       aspectRatio: '16:9', // Customize as needed
-  //       sources: [
-  //         {
-  //           src: require(`@/assets/videos/${videoSrc}`), // Use video path
-  //           type: 'video/mp4',
-  //         },
-  //       ],
-  //     };
-  //   },
-  // },
+  beforeUnmount() {
+    this.videoObservers.forEach((observer) => observer.disconnect());
+  },
   methods: {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 992;
@@ -86,6 +65,28 @@ export default {
         origin: 'bottom',
         interval: 250,
         scale: 0.95,
+      });
+    },
+    initializeVideoAutoplay() {
+      // Create an observer for each video
+      this.items.forEach((item, index) => {
+        if (item.video) {
+          const videoElement = this.$refs[`video_${index}`][0];
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  videoElement.play();
+                } else {
+                  videoElement.pause();
+                }
+              });
+            },
+            { threshold: 0.5 } // Play when 50% of the video is in view
+          );
+          observer.observe(videoElement);
+          this.videoObservers.push(observer);
+        }
       });
     },
   },
