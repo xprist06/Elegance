@@ -15,7 +15,7 @@
     </div>
     <div class="delimiter"></div>
     <div class="content-bottom">
-      <p>Copyright Elegance investiční společnost © 2024</p>
+      <p>Copyright Elegance Management Sarl. © 2024</p>
     </div>
   </footer>
 </template>

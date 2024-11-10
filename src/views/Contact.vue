@@ -20,15 +20,11 @@
             </p>
           </div>
         </v-parallax>
+        <figure class="arch">
+          <img src="@/assets/images/arches/gold-arch.png" />
+        </figure>
       </div>
       <div class="right-side">
-        <figure class="arch golden" :style="{ '--top-value': topValue }">
-          <img
-            src="@/assets/images/arches/golden-arch.svg"
-            ref="archImage"
-            @load="setTopValue"
-          />
-        </figure>
         <h2>Get in touch</h2>
         <form @submit.prevent="handleSubmit">
           <div class="form-group">
@@ -96,14 +92,7 @@ export default {
         message: '',
         agree: false,
       },
-      topValue: '0px',
     };
-  },
-  mounted() {
-    window.addEventListener('resize', this.setTopValue);
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.setTopValue);
   },
   methods: {
     handleSubmit() {
@@ -121,10 +110,6 @@ export default {
       } else {
         alert('You must agree with the conditions.');
       }
-    },
-    setTopValue() {
-      const width = this.$refs.archImage.clientWidth;
-      this.topValue = `-${width / 30}px`;
     },
   },
 };

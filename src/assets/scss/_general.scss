@@ -75,7 +75,7 @@ footer {
 }
 
 .vertical-delimiter {
-  display: flex;
+  display: none !important;
   height: 73px;
   width: 5px;
   background-color: $color-dark;
@@ -88,15 +88,11 @@ figure {
     width: 100% !important;
     padding: 0 !important;
     aspect-ratio: initial !important;
+    margin: 0 !important;
 
     img {
       width: 100%;
       object-fit: contain !important;
-    }
-
-    &.golden {
-      position: absolute;
-      top: calc(var(--top-value, 0px));
     }
   }
 }

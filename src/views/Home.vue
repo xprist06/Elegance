@@ -2,7 +2,7 @@
   <elegance-loading @animationFinished="onLoadingFinished" />
   <div id="home" class="content-wrapper">
     <section id="title">
-      <v-parallax :src="require('@/assets/images/homepage-title.jpg')">
+      <v-parallax :src="require('@/assets/images/about-title.jpg')">
         <!-- <figure>
           <img
             src="@/assets/images/homepage-title.jpg"
@@ -24,15 +24,11 @@
           </p>
         </div>
       </v-parallax>
+      <figure class="arch">
+        <img src="@/assets/images/arches/light-arch.png" />
+      </figure>
     </section>
     <section id="for-clients">
-      <figure class="arch golden" :style="{ '--top-value': topValue }">
-        <img
-          src="@/assets/images/arches/golden-arch.svg"
-          ref="archImage"
-          @load="setTopValue"
-        />
-      </figure>
       <div class="container">
         <div v-if="!isMobileView" class="vertical-delimiter reveal"></div>
         <p class="intro-text reveal">exceptional real estate opportunities</p>
@@ -142,10 +138,10 @@
           </div>
         </div>
       </div>
+      <figure class="arch">
+        <img src="@/assets/images/arches/light-arch.png" />
+      </figure>
     </section>
-    <figure class="arch">
-      <img src="@/assets/images/arches/green-arch-xl.png" />
-    </figure>
     <section id="projects">
       <div class="container">
         <div class="vertical-delimiter reveal"></div>
@@ -188,7 +184,6 @@ export default {
     return {
       isMobileView: false,
       isTabletView: false,
-      topValue: '0px',
       isLoading: true,
     };
   },
@@ -202,12 +197,10 @@ export default {
 
     window.addEventListener('resize', this.checkMobileView);
     window.addEventListener('resize', this.checkTabletView);
-    window.addEventListener('resize', this.setTopValue);
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);
     window.removeEventListener('resize', this.checkTabletView);
-    window.removeEventListener('resize', this.setTopValue);
   },
   methods: {
     onLoadingFinished() {
@@ -219,11 +212,6 @@ export default {
 
     checkTabletView() {
       this.isTabletView = window.innerWidth < 992;
-    },
-
-    setTopValue() {
-      const width = this.$refs.archImage?.clientWidth || 0;
-      this.topValue = `-${width / 30}px`;
     },
 
     reinitializeScrollReveal() {

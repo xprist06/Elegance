@@ -7,7 +7,8 @@
     >
       <figure>
         <video
-          v-if="item.video"
+          v-if="item.video && isTabletView"
+          class="reveal"
           :ref="`video_${index}`"
           :src="require(`@/assets/images/${item.video}`)"
           muted
@@ -38,23 +39,33 @@ export default {
   data() {
     return {
       isMobileView: false,
+      isTabletView: false,
       items: data,
       videoObservers: [],
     };
   },
   mounted() {
     this.checkMobileView();
+    this.checkTabletView();
     this.$nextTick(() => {
       this.reinitializeScrollReveal();
       this.initializeVideoAutoplay();
     });
+
+    window.addEventListener('resize', this.checkMobileView);
+    window.addEventListener('resize', this.checkTabletView);
   },
   beforeUnmount() {
     this.videoObservers.forEach((observer) => observer.disconnect());
+    window.removeEventListener('resize', this.checkMobileView);
+    window.removeEventListener('resize', this.checkTabletView);
   },
   methods: {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 992;
+    },
+    checkTabletView() {
+      this.isTabletView = window.innerWidth < 1400;
     },
     reinitializeScrollReveal() {
       ScrollReveal().clean('.reveal');
@@ -70,22 +81,24 @@ export default {
     initializeVideoAutoplay() {
       // Create an observer for each video
       this.items.forEach((item, index) => {
-        if (item.video) {
+        if (item.video && this.isTabletView) {
           const videoElement = this.$refs[`video_${index}`][0];
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  videoElement.play();
-                } else {
-                  videoElement.pause();
-                }
-              });
-            },
-            { threshold: 0.5 } // Play when 50% of the video is in view
-          );
-          observer.observe(videoElement);
-          this.videoObservers.push(observer);
+          if (videoElement) {
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    videoElement.play();
+                  } else {
+                    videoElement.pause();
+                  }
+                });
+              },
+              { threshold: 0.5 } // Play when 50% of the video is in view
+            );
+            observer.observe(videoElement);
+            this.videoObservers.push(observer);
+          }
         }
       });
     },
@@ -106,5 +119,8 @@ export default {
     gap: 10rem;
     padding-top: 9rem;
   }
+}
+
+@media screen and (min-width: 1400px) {
 }
 </style>

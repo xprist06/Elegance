@@ -4,7 +4,7 @@
       <v-parallax :src="require('@/assets/images/about-title.jpg')">
         <figure>
           <!-- <img src="@/assets/images/about-title.jpg" alt="About title image" /> -->
-          <div class="filter"></div>
+          <!-- <div class="filter"></div> -->
         </figure>
         <div class="text-content">
           <h2 :class="{ 'header-xl': isMobileView }">
@@ -13,37 +13,28 @@
           </h2>
         </div>
       </v-parallax>
+      <figure class="arch">
+        <img src="@/assets/images/arches/light-arch.png" />
+      </figure>
     </section>
     <section id="about-us">
-      <figure class="arch golden" :style="{ '--top-value': topValue }">
-        <img
-          src="@/assets/images/arches/golden-arch.svg"
-          ref="archImage"
-          @load="setTopValue"
-        />
-      </figure>
       <div class="container">
         <div class="vertical-delimiter no-margin reveal"></div>
         <div id="experience">
           <div>
-            <h1 v-if="isMobileView" class="reveal">+10</h1>
-            <h2 v-if="!isMobileView" class="reveal">+10</h2>
-            <p class="reveal">YEARS OF EXPERIENCE WITH REDEVELOPMENT</p>
+            <h1 v-if="isMobileView" class="reveal">20+</h1>
+            <h2 v-if="!isMobileView" class="reveal">20+</h2>
+            <p class="reveal">years of experience in<br />real estate</p>
           </div>
           <div>
-            <h1 v-if="isMobileView" class="reveal">+10</h1>
-            <h2 v-if="!isMobileView" class="reveal">+10</h2>
-            <p class="reveal">projects designed and created</p>
-          </div>
-          <div>
-            <h1 v-if="isMobileView" class="reveal">+32€ MIL</h1>
-            <h2 v-if="!isMobileView" class="reveal">+32€ MIL</h2>
-            <p class="reveal">SHAREHOLDER'S EQUITY</p>
+            <h1 v-if="isMobileView" class="reveal">50+</h1>
+            <h2 v-if="!isMobileView" class="reveal">50+</h2>
+            <p class="reveal">projects<br />realised</p>
           </div>
           <div>
             <h1 v-if="isMobileView" class="reveal">4</h1>
             <h2 v-if="!isMobileView" class="reveal">4</h2>
-            <p class="reveal">COUNTRIES IN EUROPE</p>
+            <p class="reveal">COUNTRIES<br />in Europe</p>
           </div>
         </div>
         <div id="company">
@@ -130,10 +121,10 @@
         <h2 class="reveal">Our recent projects</h2>
         <projects-items></projects-items>
       </div>
+      <figure class="arch">
+        <img src="@/assets/images/arches/light-arch.png" />
+      </figure>
     </section>
-    <figure class="arch">
-      <img src="@/assets/images/arches/green-arch-xl.png" />
-    </figure>
     <section id="our-team">
       <div class="container">
         <div class="vertical-delimiter reveal"></div>
@@ -163,7 +154,6 @@ export default {
   data() {
     return {
       isMobileView: false,
-      topValue: '0px',
     };
   },
   mounted() {
@@ -174,20 +164,13 @@ export default {
     });
 
     window.addEventListener('resize', this.checkMobileView);
-    window.addEventListener('resize', this.setTopValue);
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.checkMobileView);
-    window.removeEventListener('resize', this.setTopValue);
   },
   methods: {
     checkMobileView() {
       this.isMobileView = window.innerWidth < 992;
-    },
-
-    setTopValue() {
-      const width = this.$refs.archImage.clientWidth;
-      this.topValue = `-${width / 31}px`;
     },
 
     reinitializeScrollReveal() {
