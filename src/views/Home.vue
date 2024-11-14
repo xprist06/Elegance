@@ -2,13 +2,10 @@
   <elegance-loading @animationFinished="onLoadingFinished" />
   <div id="home" class="content-wrapper">
     <section id="title">
-      <v-parallax :src="require('@/assets/images/about-title.jpg')">
-        <!-- <figure>
-          <img
-            src="@/assets/images/homepage-title.jpg"
-            alt="Homepage title image"
-          />
-        </figure> -->
+      <v-parallax
+        v-if="isTabletView"
+        :src="require('@/assets/images/about-title.jpg')"
+      >
         <div class="text-content">
           <h1 v-if="!isMobileView">
             <div class="reveal">Invest in</div>
@@ -24,6 +21,15 @@
           </p>
         </div>
       </v-parallax>
+      <figure v-if="!isTabletView">
+        <video
+          ref="heroVideo"
+          :src="require('@/assets/videos/home_title.mp4')"
+          playsinline
+          muted
+          loop
+        ></video>
+      </figure>
       <figure class="arch">
         <img src="@/assets/images/arches/light-arch.png" />
       </figure>
@@ -170,6 +176,7 @@
 </template>
 
 <script>
+import { ref, watch } from 'vue';
 import ScrollReveal from 'scrollreveal';
 import PortfolioItems from '../components/Portfolio.vue';
 import EleganceLoading from '@/components/Loading.vue';
@@ -194,6 +201,15 @@ export default {
     this.$nextTick(() => {
       this.reinitializeScrollReveal();
     });
+
+    watch(
+      () => this.isLoading,
+      (newVal) => {
+        if (!newVal) {
+          this.playHeroVideo();
+        }
+      }
+    );
 
     window.addEventListener('resize', this.checkMobileView);
     window.addEventListener('resize', this.checkTabletView);
@@ -224,6 +240,13 @@ export default {
         interval: 250,
         scale: 0.95,
       });
+    },
+
+    playHeroVideo() {
+      const videoElement = this.$refs.heroVideo;
+      if (videoElement) {
+        videoElement.play();
+      }
     },
   },
 };

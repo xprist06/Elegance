@@ -54,7 +54,7 @@ export default {
       this.overlayFadedOut = true;
       setTimeout(() => {
         this.isVisible = false;
-      }, 1000);
+      }, 0);
     },
     handleAfterLeave() {
       this.$emit('animationFinished');
