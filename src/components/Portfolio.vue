@@ -5,7 +5,7 @@
       :key="item.id"
       :class="{ row: true, 'row-reverse': index % 2 === 1 }"
     >
-      <figure>
+      <figure class="reveal">
         <video
           v-if="item.video && isTabletView"
           class="reveal"

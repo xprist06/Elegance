@@ -21,6 +21,15 @@
           </p>
         </div>
       </v-parallax>
+      <!-- <figure v-if="isTabletView">
+        <video
+          ref="heroVideo"
+          :src="require('@/assets/videos/home_title_mobile.mp4')"
+          playsinline
+          muted
+          loop
+        ></video>
+      </figure> -->
       <figure v-if="!isTabletView">
         <video
           ref="heroVideo"
